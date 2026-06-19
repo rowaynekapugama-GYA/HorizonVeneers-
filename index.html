@@ -309,6 +309,12 @@ body.lead-submitted #thanks{ display:flex; }
 .card .ticks li{ font-size:.9rem; }
 .badge{ position:absolute; top:1.2rem; right:1.2rem; font-size:.66rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase;
   padding:.34em .75em; border-radius:999px; color:var(--ink); background:linear-gradient(180deg,var(--aqua),var(--steel-lite)); }
+/* duration/label badge that sits ABOVE the card title — avoids overlap with long titles */
+.badge.flow{ position:static; display:inline-block; margin:0 0 .8rem; top:auto; right:auto; }
+/* Instagram reels (social proof) */
+.reels{ display:grid; grid-template-columns:1fr 1fr; gap:1.4rem; margin-top:2rem; justify-items:center; align-items:start; }
+.reels .instagram-media{ margin:0 auto !important; }
+@media (max-width:880px){ .reels{ grid-template-columns:1fr; } }
 .note-chip{ margin-top:1.6rem; padding:1.2rem 1.4rem; border-radius:var(--r-s); display:flex; gap:1rem; align-items:flex-start; }
 .note-chip .ico{ flex:0 0 auto; width:40px; height:40px; border-radius:11px; display:grid; place-items:center;
   background:rgba(207,196,166,.16); border:1px solid rgba(207,196,166,.4); color:var(--aqua); }
@@ -568,6 +574,22 @@ body.lead-submitted #thanks{ display:flex; }
     </div>
   </section>
 
+  <!-- ================= 3.5 REELS / STORIES ================= -->
+  <section class="panel" id="stories">
+    <div class="panel-inner">
+      <p class="eyebrow reveal">Straight from Instagram</p>
+      <h2 class="title reveal d1">Real stories, real smiles</h2>
+      <p class="lede reveal d2">Watch real veneer journeys from our Sydney CBD practice — tap a reel to play.</p>
+      <div class="reels reveal d2">
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DZrsoOwCZkF/" data-instgrm-version="14"></blockquote>
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/CsDG0QOBbkg/" data-instgrm-version="14"></blockquote>
+      </div>
+      <div class="hero-cta reveal d3" style="margin-top:1.8rem">
+        <button class="btn btn-primary btn-lg js-book" type="button">Start my smile journey</button>
+      </div>
+    </div>
+  </section>
+
   <!-- ================= 4. PORCELAIN vs COMPOSITE ================= -->
   <section class="panel" id="types">
     <div class="panel-inner">
@@ -618,7 +640,7 @@ body.lead-submitted #thanks{ display:flex; }
 
       <div class="cards three reveal d2">
         <div class="glass card">
-          <span class="badge">≈ 45 minutes</span>
+          <span class="badge flow">≈ 45 minutes</span>
           <h3>1. Consultation &amp; Digital Smile Design</h3>
           <p>We begin with a comprehensive assessment — high-resolution photos and a digital scan of your teeth. Using advanced software, we simulate your potential results and discuss your goals, preferences and lifestyle.</p>
           <ul class="ticks">
@@ -628,12 +650,12 @@ body.lead-submitted #thanks{ display:flex; }
           </ul>
         </div>
         <div class="glass card">
-          <span class="badge">≈ 1.5–2 hours</span>
+          <span class="badge flow">≈ 1.5–2 hours</span>
           <h3>2. Temporary Mock-Up (“Test Drive”)</h3>
           <p>Once your design is finalised, we create a temporary mock-up so you can “test drive” your new smile — seeing and feeling what your new teeth will look like, with the chance to make changes before committing. You'll feel 100% confident before moving forward.</p>
         </div>
         <div class="glass card">
-          <span class="badge">≈ 1–2 hours</span>
+          <span class="badge flow">≈ 1–2 hours</span>
           <h3>3. Final Veneer Placement</h3>
           <p>On the day of placement, we carefully prepare your teeth (if needed) and bond your final veneers in place with precision. We check the fit, bite and aesthetics before finalising everything — the time depends on how many veneers are being fitted.</p>
         </div>
@@ -1035,7 +1057,7 @@ const deck = document.getElementById("deck");
 const panels = Array.from(deck.querySelectorAll(".panel"));
 const chapters = [
   {id:"hero",label:"Welcome"},{id:"why",label:"Why veneers"},{id:"before",label:"Results"},
-  {id:"types",label:"Options"},{id:"process",label:"Process"},{id:"funding",label:"Pricing"},
+  {id:"stories",label:"Stories"},{id:"types",label:"Options"},{id:"process",label:"Process"},{id:"funding",label:"Pricing"},
   {id:"dentist",label:"Your dentist"},{id:"faq",label:"Questions"},
   {id:"book",label:"Book"}
 ];
@@ -1168,5 +1190,7 @@ mqMobile.addEventListener("change", ()=>{ deck.scrollTo({left:0}); window.scroll
 refreshLayout();
 
 </script>
+<!-- Instagram embeds (renders the reels in the Stories section) -->
+<script async src="https://www.instagram.com/embed.js"></script>
 </body>
 </html>
