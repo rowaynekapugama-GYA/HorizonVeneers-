@@ -1,0 +1,7 @@
+{
+  "name": "horizon-lead-relay",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Serverless lead relay for the Horizon Dental veneers landing page (emails form submissions to the SmileOx CRM intake via SMTP2GO).",
+  "engines": { "node": ">=18" }
+}
