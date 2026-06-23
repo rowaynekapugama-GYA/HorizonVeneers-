@@ -4,12 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="robots" content="noindex, follow">
-<title>Dental Veneers Sydney — From $70/week | Horizon Dental</title>
-<meta name="description" content="Natural-looking porcelain & composite veneers in Sydney CBD with Dr David Kozor. Digital smile design and flexible payment plans from $70/week. Book your veneer consultation at Horizon Dental.">
+<title>Dental Veneers Sydney — From $100/week | Horizon Dental</title>
+<meta name="description" content="Natural-looking porcelain & composite veneers in Sydney CBD with Dr David Kozor. Digital smile design and flexible payment plans from $100/week. Book your veneer consultation at Horizon Dental.">
 <link rel="icon" href="logo.svg">
 <meta name="theme-color" content="#1b1d14">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Dental Veneers Sydney — From $70/week | Horizon Dental">
+<meta property="og:title" content="Dental Veneers Sydney — From $100/week | Horizon Dental">
 <meta property="og:description" content="Natural-looking porcelain & composite veneers in Sydney CBD with Dr David Kozor. Digital smile design and flexible weekly payment plans.">
 <meta name="twitter:card" content="summary_large_image">
 
@@ -100,13 +100,15 @@ a{ color:inherit; }
 #hero{ position:relative; isolation:isolate; }
 .hero-video-wrap{ position:absolute; inset:0; z-index:0; overflow:hidden; pointer-events:none; background:var(--navy-900); }
 .hero-video{ width:100%; height:100%; object-fit:cover; display:block; }
+.hero-video-wrap iframe{ position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+  width:max(100vw,177.78vh); height:max(100vh,56.25vw); border:0; pointer-events:none; }
 .hero-veil{ position:absolute; inset:0; z-index:1; pointer-events:none;
   background:
-    linear-gradient(100deg, rgba(8,13,22,.92) 0%, rgba(8,13,22,.72) 34%, rgba(8,13,22,.34) 62%, rgba(8,13,22,.5) 100%),
-    linear-gradient(180deg, rgba(8,13,22,.45) 0%, transparent 22%, transparent 70%, rgba(8,13,22,.55) 100%); }
+    linear-gradient(100deg, rgba(19,21,14,.92) 0%, rgba(19,21,14,.72) 34%, rgba(19,21,14,.34) 62%, rgba(19,21,14,.5) 100%),
+    linear-gradient(180deg, rgba(19,21,14,.45) 0%, transparent 22%, transparent 70%, rgba(19,21,14,.55) 100%); }
 #hero .panel-inner{ position:relative; z-index:2; }
 @media (max-width:880px){
-  .hero-veil{ background:linear-gradient(180deg, rgba(8,13,22,.74) 0%, rgba(8,13,22,.62) 45%, rgba(8,13,22,.9) 100%); }
+  .hero-veil{ background:linear-gradient(180deg, rgba(19,21,14,.74) 0%, rgba(19,21,14,.62) 45%, rgba(19,21,14,.9) 100%); }
 }
 
 /* ---------- Glass utility ---------- */
@@ -145,7 +147,7 @@ a{ color:inherit; }
 .topbar{ position:fixed; top:0; left:0; right:0; height:var(--bar-h); z-index:60;
   display:flex; align-items:center; justify-content:space-between; gap:1rem;
   padding:0 clamp(16px,4vw,40px);
-  background:linear-gradient(180deg, rgba(8,13,22,.72), rgba(8,13,22,.32));
+  background:linear-gradient(180deg, rgba(19,21,14,.72), rgba(19,21,14,.32));
   -webkit-backdrop-filter:blur(18px) saturate(140%); backdrop-filter:blur(18px) saturate(140%);
   border-bottom:1px solid rgba(255,255,255,.08); }
 .brand{ display:flex; flex-direction:column; line-height:1.1; text-decoration:none; }
@@ -267,7 +269,7 @@ body.lead-submitted #thanks{ display:flex; }
 .ba-item{ position:relative; margin:0; padding:8px; border-radius:var(--r); overflow:hidden; }
 .ba-item img{ display:block; width:100%; height:auto; border-radius:var(--r-s); }
 .ba-tag{ position:absolute; top:18px; font-size:.62rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase;
-  padding:.3em .7em; border-radius:999px; background:rgba(8,13,22,.62); -webkit-backdrop-filter:blur(6px); backdrop-filter:blur(6px);
+  padding:.3em .7em; border-radius:999px; background:rgba(19,21,14,.62); -webkit-backdrop-filter:blur(6px); backdrop-filter:blur(6px);
   color:#fff; border:1px solid rgba(255,255,255,.22); z-index:2; }
 .ba-tag-before{ left:18px; }
 .ba-tag-after{ right:18px; }
@@ -289,7 +291,7 @@ body.lead-submitted #thanks{ display:flex; }
 .video-shell video{ width:100%; height:100%; object-fit:cover; display:block; }
 .video-poster{ position:absolute; inset:0; background-size:cover; background-position:center; display:grid; place-items:center;
   cursor:pointer; transition:opacity .4s; }
-.video-poster::before{ content:""; position:absolute; inset:0; background:linear-gradient(180deg,rgba(8,13,22,.15),rgba(8,13,22,.55)); }
+.video-poster::before{ content:""; position:absolute; inset:0; background:linear-gradient(180deg,rgba(19,21,14,.15),rgba(19,21,14,.55)); }
 .play-btn{ position:relative; width:84px; height:84px; border-radius:50%; border:1px solid rgba(255,255,255,.5);
   background:rgba(255,255,255,.14); -webkit-backdrop-filter:blur(10px); backdrop-filter:blur(10px); display:grid; place-items:center;
   box-shadow:0 12px 40px rgba(0,0,0,.5); transition:transform .25s var(--ease); }
@@ -315,6 +317,15 @@ body.lead-submitted #thanks{ display:flex; }
 .reels{ display:grid; grid-template-columns:1fr 1fr; gap:1.4rem; margin-top:2rem; justify-items:center; align-items:start; }
 .reels .instagram-media{ margin:0 auto !important; }
 @media (max-width:880px){ .reels{ grid-template-columns:1fr; } }
+/* click-to-play explainer video (Dr Kozor) */
+.video-embed{ position:relative; width:100%; margin:2.2rem 0 0; aspect-ratio:16/9;
+  border-radius:var(--r); overflow:hidden; border:1px solid rgba(255,255,255,.1); box-shadow:0 30px 80px rgba(0,0,0,.5); background:#000; }
+.video-embed iframe{ position:absolute; inset:0; width:100%; height:100%; border:0; display:block; }
+/* hero Google-reviews badge */
+.reviews{ display:flex; align-items:center; gap:.7rem; margin-top:1.9rem; flex-wrap:wrap; }
+.reviews .stars{ color:#f0c24c; font-size:1.35rem; letter-spacing:.12em; line-height:1; white-space:nowrap; }
+.reviews .reviews-text{ color:var(--mist); font-size:1rem; }
+.reviews .reviews-text strong{ color:#fff; font-weight:700; }
 .note-chip{ margin-top:1.6rem; padding:1.2rem 1.4rem; border-radius:var(--r-s); display:flex; gap:1rem; align-items:flex-start; }
 .note-chip .ico{ flex:0 0 auto; width:40px; height:40px; border-radius:11px; display:grid; place-items:center;
   background:rgba(207,196,166,.16); border:1px solid rgba(207,196,166,.4); color:var(--aqua); }
@@ -366,7 +377,7 @@ body.lead-submitted #thanks{ display:flex; }
 
 /* ---------- Footer ---------- */
 .footer{ padding:clamp(40px,6vh,72px) clamp(20px,5vw,48px) 3rem; border-top:1px solid rgba(255,255,255,.08);
-  background:linear-gradient(180deg, transparent, rgba(8,13,22,.6)); }
+  background:linear-gradient(180deg, transparent, rgba(19,21,14,.6)); }
 .footer-inner{ max-width:var(--maxw); margin:0 auto; }
 .footer-top{ display:flex; flex-wrap:wrap; justify-content:space-between; gap:2rem; align-items:flex-start; }
 .footer-brand b{ font-family:"Fraunces",serif; font-size:1.3rem; color:#fff; display:block; }
@@ -385,7 +396,7 @@ body.lead-submitted #thanks{ display:flex; }
 .sidenav button:hover{ background:rgba(255,255,255,.4); }
 .sidenav button.active{ background:var(--aqua); border-color:var(--aqua); box-shadow:0 0 0 5px rgba(207,196,166,.18); }
 .sidenav button .lbl{ position:absolute; right:22px; top:50%; transform:translateY(-50%); white-space:nowrap; font-size:.72rem;
-  padding:.35em .7em; border-radius:8px; background:rgba(8,13,22,.85); color:#fff; opacity:0; pointer-events:none; transition:.2s; border:1px solid rgba(255,255,255,.12); }
+  padding:.35em .7em; border-radius:8px; background:rgba(19,21,14,.85); color:#fff; opacity:0; pointer-events:none; transition:.2s; border:1px solid rgba(255,255,255,.12); }
 .sidenav button:hover .lbl{ opacity:1; }
 
 /* ---------- Mobile dock (hidden on desktop) ---------- */
@@ -432,7 +443,7 @@ body.lead-submitted #thanks{ display:flex; }
   /* Bottom dock */
   .dock{ display:flex; position:fixed; left:0; right:0; bottom:0; height:var(--dock-h); z-index:55;
     align-items:center; justify-content:space-between; gap:.8rem; padding:0 16px calc(env(safe-area-inset-bottom));
-    background:linear-gradient(0deg, rgba(8,13,22,.85), rgba(8,13,22,.4));
+    background:linear-gradient(0deg, rgba(19,21,14,.85), rgba(19,21,14,.4));
     -webkit-backdrop-filter:blur(18px) saturate(140%); backdrop-filter:blur(18px) saturate(140%);
     border-top:1px solid rgba(255,255,255,.1); }
   .dock-arrow{ width:46px; height:46px; flex:0 0 auto; border-radius:50%; border:1px solid var(--glass-edge);
@@ -485,11 +496,15 @@ body.lead-submitted #thanks{ display:flex; }
 
   <!-- ================= 1. HERO ================= -->
   <section class="panel" id="hero">
+    <div class="hero-video-wrap" aria-hidden="true">
+      <iframe src="https://player.vimeo.com/video/1203831114?background=1&autopause=0&dnt=1" allow="autoplay; fullscreen; picture-in-picture" title="Horizon Dental background film" tabindex="-1"></iframe>
+    </div>
+    <div class="hero-veil" aria-hidden="true"></div>
     <div class="panel-inner">
       <div class="hero-copy">
         <p class="eyebrow reveal">Sydney CBD · Porcelain &amp; composite veneers</p>
         <h1 class="reveal d1">Your dream smile,
-          <span class="pop"><em>from $70/week</em></span></h1>
+          <span class="pop"><em>from $100/week</em></span></h1>
         <p class="hero-sub reveal d2">Natural-looking veneers, custom-designed in Sydney CBD to transform discoloured, chipped, gapped or uneven teeth — with a digital smile design so you can <b>preview your new smile before you commit</b>.<sup>*</sup></p>
 
         <div class="pay-chip glass reveal d2">
@@ -497,7 +512,7 @@ body.lead-submitted #thanks{ display:flex; }
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
           </span>
           <div>
-            <b>Flexible payment plans — from $70/week</b>
+            <b>Flexible payment plans — from $100/week</b>
             <p>Spread the cost of your smile makeover into manageable weekly repayments to suit your budget — subject to approval.</p>
           </div>
         </div>
@@ -508,8 +523,9 @@ body.lead-submitted #thanks{ display:flex; }
           <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 6"/></svg></span>Weekly payment plans available</li>
         </ul>
 
-        <div class="hero-cta reveal d3">
-          <button class="btn btn-primary btn-lg js-book" type="button">Design my smile</button>
+        <div class="reviews reveal d3" aria-label="Rated 5.0 out of 5 from 105 Google reviews">
+          <span class="stars" aria-hidden="true">★★★★★</span>
+          <span class="reviews-text"><strong>5.0</strong> from <strong>105</strong> Google reviews</span>
         </div>
 
         <p class="scroll-hint reveal d4"><span class="dot"></span>
@@ -521,6 +537,21 @@ body.lead-submitted #thanks{ display:flex; }
       <!-- DESKTOP form mount (hidden on mobile) -->
       <div class="hero-form-wrap reveal d2">
         <div class="glass form-card" id="heroFormMount"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 1.5 WATCH — DR KOZOR PROCESS VIDEO ================= -->
+  <section class="panel" id="watch">
+    <div class="panel-inner">
+      <p class="eyebrow reveal">Press play</p>
+      <h2 class="title reveal d1">Here's Dr Kozor walking you through the veneer process</h2>
+      <p class="lede reveal d2">In just a couple of minutes, Dr David Kozor explains exactly how your smile transformation works — from your first consultation right through to your final veneers.</p>
+      <div class="video-embed reveal d2">
+        <iframe src="https://player.vimeo.com/video/1203842992?title=0&byline=0&portrait=0&dnt=1" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Dr Kozor explains the veneer process"></iframe>
+      </div>
+      <div class="hero-cta reveal d3" style="margin-top:1.8rem">
+        <button class="btn btn-primary btn-lg js-book" type="button">Book my consultation</button>
       </div>
     </div>
   </section>
@@ -599,7 +630,7 @@ body.lead-submitted #thanks{ display:flex; }
 
       <div class="cards two reveal d2">
         <div class="glass card">
-          <span class="badge">Most popular</span>
+          <span class="badge flow">Most popular</span>
           <h3>Porcelain veneers</h3>
           <p>Our most natural-looking option — highly translucent, stain-resistant and durable, designed to reflect light just like real enamel for a flawless, long-lasting finish.</p>
           <ul class="ticks">
@@ -609,6 +640,7 @@ body.lead-submitted #thanks{ display:flex; }
           </ul>
         </div>
         <div class="glass card">
+          <span class="badge flow">Single visit</span>
           <h3>Composite veneers</h3>
           <p>A more affordable option, often completed in a single visit with little to no enamel removal. Beautifully natural, though slightly less translucent than porcelain.</p>
           <ul class="ticks">
@@ -671,12 +703,11 @@ body.lead-submitted #thanks{ display:flex; }
   <section class="panel" id="funding">
     <div class="panel-inner">
       <p class="eyebrow reveal">Affordable smiles</p>
-      <h2 class="title reveal d1">From $70/week</h2>
+      <h2 class="title reveal d1">From $100/week</h2>
       <p class="lede reveal d2">A beautiful smile shouldn't be out of reach. We offer flexible weekly payment plans so you can start your transformation sooner — with clear, upfront pricing and no surprises.</p>
 
       <div class="cards three reveal d2">
         <div class="glass card">
-          <span class="badge">From $70/week</span>
           <h3>Weekly payment plans</h3>
           <p>Spread the cost of your veneers into manageable weekly repayments to suit your budget, rather than paying it all upfront — subject to approval.</p>
         </div>
@@ -768,7 +799,7 @@ body.lead-submitted #thanks{ display:flex; }
         </div>
         <div class="glass faq-item">
           <button class="faq-q" type="button" aria-expanded="false">How much do veneers cost?<span class="pm" aria-hidden="true">+</span></button>
-          <div class="faq-a"><p>Your investment depends on the number and type of veneers. We offer flexible weekly payment plans from $70/week (subject to approval), and you'll receive a clear, itemised quote before anything begins.</p></div>
+          <div class="faq-a"><p>Your investment depends on the number and type of veneers. We offer flexible weekly payment plans from $100/week (subject to approval), and you'll receive a clear, itemised quote before anything begins.</p></div>
         </div>
       </div>
     </div>
@@ -809,7 +840,7 @@ body.lead-submitted #thanks{ display:flex; }
           <p style="font-size:.82rem; color:var(--mist); margin:0 0 .8rem;">Park House, Level 14, 187–191 Macquarie Street, Sydney NSW 2000</p>
           <iframe class="map-embed" title="Map to Horizon Dental, 187 Macquarie Street Sydney" src="https://www.google.com/maps?q=Horizon%20Dental%20187%20Macquarie%20Street%20Sydney%20NSW%202000&z=16&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
-        <p style="font-size:.72rem; color:var(--mist-dim); line-height:1.6;">For suitable patients only. Results may vary between individuals, and any dental procedure carries risks and benefits. Veneer treatment requires a consultation to determine suitability. Before proceeding, you should seek advice from an appropriately qualified health practitioner. Weekly payment plans (from $70/week) are subject to provider terms and approval.</p>
+        <p style="font-size:.72rem; color:var(--mist-dim); line-height:1.6;">For suitable patients only. Results may vary between individuals, and any dental procedure carries risks and benefits. Veneer treatment requires a consultation to determine suitability. Before proceeding, you should seek advice from an appropriately qualified health practitioner. Weekly payment plans (from $100/week) are subject to provider terms and approval.</p>
         <p style="font-size:.72rem; color:var(--mist); margin-top:.8rem;">Dr David Kozor — Dental Practitioner. AHPRA registration: <span style="opacity:.8">[add registration number]</span>.</p>
         <p style="font-size:.72rem; color:var(--mist-dim); margin-top:1rem;">© Horizon Dental. All rights reserved.</p>
       </div>
@@ -829,7 +860,7 @@ body.lead-submitted #thanks{ display:flex; }
         <ol class="next-steps">
           <li><span class="num">1</span><span>Our team will give you a call to find a time that suits and answer any questions you have.</span></li>
           <li><span class="num">2</span><span>At your consultation we'll take photos and a digital scan, and design a preview of your new smile.</span></li>
-          <li><span class="num">3</span><span>You'll get a clear plan and quote — including weekly payment options from $70/week.</span></li>
+          <li><span class="num">3</span><span>You'll get a clear plan and quote — including weekly payment options from $100/week.</span></li>
         </ol>
       </div>
     </div>
@@ -855,7 +886,7 @@ body.lead-submitted #thanks{ display:flex; }
     <div class="legal">
       <p>For suitable patients only. Results may vary between individuals. Veneer treatment requires a consultation to determine suitability.</p>
       <p>Any dental procedure carries risks and benefits. Before proceeding, you should seek advice from an appropriately qualified health practitioner.</p>
-      <p>Weekly payment plans (from $70/week) are subject to provider terms and approval.</p>
+      <p>Weekly payment plans (from $100/week) are subject to provider terms and approval.</p>
       <p class="reg">Dr David Kozor — Dental Practitioner. AHPRA registration: <span style="opacity:.8">[add registration number]</span>.</p>
       <p class="copy">© Horizon Dental, All rights reserved · Website Design by <a href="https://generateyouraudience.com/" target="_blank" rel="noopener">Generate Your Audience</a></p>
     </div>
@@ -1056,7 +1087,7 @@ document.querySelectorAll(".faq-item").forEach(item=>{
 const deck = document.getElementById("deck");
 const panels = Array.from(deck.querySelectorAll(".panel"));
 const chapters = [
-  {id:"hero",label:"Welcome"},{id:"why",label:"Why veneers"},{id:"before",label:"Results"},
+  {id:"hero",label:"Welcome"},{id:"watch",label:"Watch"},{id:"why",label:"Why veneers"},{id:"before",label:"Results"},
   {id:"stories",label:"Stories"},{id:"types",label:"Options"},{id:"process",label:"Process"},{id:"funding",label:"Pricing"},
   {id:"dentist",label:"Your dentist"},{id:"faq",label:"Questions"},
   {id:"book",label:"Book"}
