@@ -38,3 +38,15 @@ That JSON = the relay is deployed. A **404** means `lead.js` isn't inside an `ap
 ## Before going fully live
 - Replace **`[add registration number]`** with Dr David Kozor's AHPRA registration number (3 places: the before/after disclaimer, the mobile legal block, and the footer).
 - The `From` domain (`horizondental.com.au`) should be verified as a sender in SMTP2GO for best deliverability.
+
+## A/B test — two landing pages
+This repo contains two variants that link to each other via a small "⇄" button (bottom-left):
+
+| File | URL (Vercel) | Focus |
+|---|---|---|
+| `index.html` | `/` | **Variant A (control)** — benefit/preview-led hero, no price table |
+| `b.html` | `/b` | **Variant B** — price-led hero + a fixed-price packages table under the banner ($7,900 / $8,900 / $9,900; weekly via ZipMoney) |
+
+Both share the same images, `api/lead.js`, and form (both submit to `/api/lead`). Deploy the whole folder as-is; both pages work immediately.
+
+To run the split test, send traffic to `/` and `/b` (e.g. via your ad platform's rotation, a Vercel rewrite/Edge split, or any A/B tool). Both pages are `noindex` so they won't create duplicate-content issues. The "⇄" switch button is mainly for your own previewing — remove it before a live test if you don't want real visitors hopping between variants (just delete the `<a class="ab-switch" …>` line and the `.ab-switch` CSS block in each file, or ask me to).

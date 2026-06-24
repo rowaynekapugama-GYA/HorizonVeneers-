@@ -4,12 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="robots" content="noindex, follow">
-<title>Dental Veneers Sydney — From $100/week | Horizon Dental</title>
+<title>Veneers Sydney — From $7,900 or $100/week | Horizon Dental</title>
 <meta name="description" content="Natural-looking porcelain & composite veneers in Sydney CBD with Dr David Kozor. Digital smile design and flexible payment plans from $100/week. Book your veneer consultation at Horizon Dental.">
 <link rel="icon" href="logo.svg">
 <meta name="theme-color" content="#1b1d14">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Dental Veneers Sydney — From $100/week | Horizon Dental">
+<meta property="og:title" content="Veneers Sydney — From $7,900 or $100/week | Horizon Dental">
 <meta property="og:description" content="Natural-looking porcelain & composite veneers in Sydney CBD with Dr David Kozor. Digital smile design and flexible weekly payment plans.">
 <meta name="twitter:card" content="summary_large_image">
 
@@ -483,6 +483,25 @@ body.lead-submitted #thanks{ display:flex; }
   transition:transform .2s var(--ease), border-color .2s, background .2s; }
 .ab-switch:hover{ transform:translateY(-2px); border-color:var(--aqua); background:rgba(38,41,32,.92); }
 @media (max-width:880px){ .ab-switch{ bottom:calc(var(--dock-h) + 12px); left:12px; padding:.5em .85em; font-size:.72rem; } }
+/* fixed-price table (variant B) */
+.price-table-wrap{ margin-top:2rem; border:1px solid rgba(255,255,255,.1); border-radius:var(--r); overflow:hidden; background:rgba(255,255,255,.03); }
+.price-table{ width:100%; border-collapse:collapse; }
+.price-table th, .price-table td{ padding:1.15rem 1.4rem; text-align:left; border-bottom:1px solid rgba(255,255,255,.08); }
+.price-table thead th{ font-size:.7rem; text-transform:uppercase; letter-spacing:.1em; color:var(--aqua); font-weight:700; background:rgba(207,196,166,.07); }
+.price-table tbody tr:last-child td{ border-bottom:0; }
+.price-table tbody td{ color:var(--cloud); font-size:1.05rem; }
+.price-table td b{ color:#fff; font-weight:600; }
+.price-table .pt-price{ font-family:"Fraunces",serif; font-size:1.55rem; color:#fff; }
+.price-table .pt-week{ color:var(--aqua); font-weight:700; font-size:1.2rem; white-space:nowrap; }
+.price-table .pt-week span{ font-size:.78rem; color:var(--mist-dim); font-weight:500; }
+.price-note{ margin-top:1rem; font-size:.78rem; color:var(--mist-dim); line-height:1.6; max-width:64ch; }
+@media (max-width:560px){
+  .price-table th, .price-table td{ padding:.8rem .7rem; }
+  .price-table thead th{ font-size:.6rem; letter-spacing:.05em; }
+  .price-table tbody td{ font-size:.9rem; }
+  .price-table .pt-price{ font-size:1.2rem; }
+  .price-table .pt-week{ font-size:1rem; }
+}
 </style>
 </head>
 
@@ -501,7 +520,7 @@ body.lead-submitted #thanks{ display:flex; }
 </header>
 
 <!-- A/B test: jump to the price-focused variant -->
-<a class="ab-switch" href="b.html" title="Switch to the pricing-focused version (A/B test)"><span aria-hidden="true">⇄</span>&nbsp;Pricing version</a>
+<a class="ab-switch" href="index.html" title="Switch to the standard version (A/B test)"><span aria-hidden="true">⇄</span>&nbsp;Standard version</a>
 
 <main class="deck" id="deck">
 
@@ -513,25 +532,25 @@ body.lead-submitted #thanks{ display:flex; }
     <div class="hero-veil" aria-hidden="true"></div>
     <div class="panel-inner">
       <div class="hero-copy">
-        <p class="eyebrow reveal">Sydney CBD · Porcelain &amp; composite veneers</p>
+        <p class="eyebrow reveal">Sydney CBD · Fixed-price veneer packages</p>
         <h1 class="reveal d1">Your dream smile,
-          <span class="pop"><em>from $100/week</em></span></h1>
-        <p class="hero-sub reveal d2">Natural-looking veneers, custom-designed in Sydney CBD to transform discoloured, chipped, gapped or uneven teeth — with a digital smile design so you can <b>preview your new smile before you commit</b>.<sup>*</sup></p>
+          <span class="pop"><em>from $7,900</em></span></h1>
+        <p class="hero-sub reveal d2">Premium porcelain and composite veneers in Sydney CBD — choose 6, 8 or 10 units from <b>$7,900</b>, or from just <b>$100/week</b> with ZipMoney over 2 years. Custom-designed, with a digital smile preview before you commit.<sup>*</sup></p>
 
         <div class="pay-chip glass reveal d2">
           <span class="ico" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
           </span>
           <div>
-            <b>Flexible payment plans — from $100/week</b>
-            <p>Spread the cost of your smile makeover into manageable weekly repayments to suit your budget — subject to approval.</p>
+            <b>From $7,900 — or $100/week with ZipMoney</b>
+            <p>Three clear, fixed-price packages: 6, 8 or 10 units. See the full pricing breakdown just below.</p>
           </div>
         </div>
 
         <ul class="trust reveal d3">
-          <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 6"/></svg></span>Preview your smile before you commit</li>
-          <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 6"/></svg></span>Natural-looking, custom-made veneers</li>
-          <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 6"/></svg></span>Weekly payment plans available</li>
+          <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 6"/></svg></span>6, 8 or 10-unit packages</li>
+          <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 6"/></svg></span>Weekly plans from $100 with ZipMoney</li>
+          <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 6"/></svg></span>Clear, fixed pricing — no surprises</li>
         </ul>
 
         <div class="reviews reveal d3" aria-label="Rated 5.0 out of 5 from 105 Google reviews">
@@ -548,6 +567,31 @@ body.lead-submitted #thanks{ display:flex; }
       <!-- DESKTOP form mount (hidden on mobile) -->
       <div class="hero-form-wrap reveal d2">
         <div class="glass form-card" id="heroFormMount"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 1.4 PRICING TABLE (variant B) ================= -->
+  <section class="panel" id="pricing">
+    <div class="panel-inner">
+      <p class="eyebrow reveal">Transparent, fixed pricing</p>
+      <h2 class="title reveal d1">Clear veneer packages — from $7,900</h2>
+      <p class="lede reveal d2">No hidden costs — just clear, fixed pricing. Choose the number of units that suits your smile, then spread the total over two years with weekly repayments through ZipMoney.</p>
+      <div class="price-table-wrap reveal d2">
+        <table class="price-table">
+          <thead>
+            <tr><th>Veneers</th><th>Price</th><th>Per week*</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><b>6 units</b></td><td class="pt-price">$7,900</td><td class="pt-week">$100<span>/week</span></td></tr>
+            <tr><td><b>8 units</b></td><td class="pt-price">$8,900</td><td class="pt-week">$113<span>/week</span></td></tr>
+            <tr><td><b>10 units</b></td><td class="pt-price">$9,900</td><td class="pt-week">$125<span>/week</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="price-note reveal">*Repaid weekly over 2 years with ZipMoney, subject to approval and provider terms. Final pricing is confirmed at your consultation based on the number and type of veneers you choose.</p>
+      <div class="hero-cta reveal d3" style="margin-top:1.6rem">
+        <button class="btn btn-primary btn-lg js-book" type="button">Book my consultation</button>
       </div>
     </div>
   </section>
@@ -720,7 +764,7 @@ body.lead-submitted #thanks{ display:flex; }
       <div class="cards three reveal d2">
         <div class="glass card">
           <h3>Weekly payment plans</h3>
-          <p>Spread the cost of your veneers into manageable weekly repayments to suit your budget, rather than paying it all upfront — subject to approval.</p>
+          <p>Spread the cost of your veneers over two years with ZipMoney — from $100/week — rather than paying it all upfront, subject to approval.</p>
         </div>
         <div class="glass card">
           <h3>Transparent pricing</h3>
@@ -810,7 +854,7 @@ body.lead-submitted #thanks{ display:flex; }
         </div>
         <div class="glass faq-item">
           <button class="faq-q" type="button" aria-expanded="false">How much do veneers cost?<span class="pm" aria-hidden="true">+</span></button>
-          <div class="faq-a"><p>Your investment depends on the number and type of veneers. We offer flexible weekly payment plans from $100/week (subject to approval), and you'll receive a clear, itemised quote before anything begins.</p></div>
+          <div class="faq-a"><p>Our veneer packages are clearly priced: $7,900 for 6 units, $8,900 for 8 units, or $9,900 for 10 units. You can spread the cost over two years with ZipMoney — from $100/week (subject to approval) — and you'll receive a clear, itemised quote before anything begins.</p></div>
         </div>
       </div>
     </div>
@@ -1098,8 +1142,8 @@ document.querySelectorAll(".faq-item").forEach(item=>{
 const deck = document.getElementById("deck");
 const panels = Array.from(deck.querySelectorAll(".panel"));
 const chapters = [
-  {id:"hero",label:"Welcome"},{id:"watch",label:"Watch"},{id:"why",label:"Why veneers"},{id:"before",label:"Results"},
-  {id:"stories",label:"Stories"},{id:"types",label:"Options"},{id:"process",label:"Process"},{id:"funding",label:"Pricing"},
+  {id:"hero",label:"Welcome"},{id:"pricing",label:"Pricing"},{id:"watch",label:"Watch"},{id:"why",label:"Why veneers"},{id:"before",label:"Results"},
+  {id:"stories",label:"Stories"},{id:"types",label:"Options"},{id:"process",label:"Process"},{id:"funding",label:"Payments"},
   {id:"dentist",label:"Your dentist"},{id:"faq",label:"Questions"},
   {id:"book",label:"Book"}
 ];
