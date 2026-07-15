@@ -36,11 +36,14 @@ That JSON = the relay is deployed. A **404** means `lead.js` isn't inside an `ap
 | `ALLOW_ORIGIN` | optional | CORS origin. Default `*` (same-origin needs nothing). |
 
 ## Before going fully live
-- Replace **`[add registration number]`** with Dr David Kozor's AHPRA registration number (3 places: the before/after disclaimer, the mobile legal block, and the footer).
+- ✅ AHPRA registration (DEN0001855548) is now filled in all 3 places — the before/after disclaimer, the mobile legal block, and the footer — on both variants.
+- The full before/after disclaimer (treatments combination, 6 weeks–12+ months timeframe, risks, second-opinion advice) now sits directly under the before/after gallery on both pages.
+- The "Real Smiles. Real Results." section pulls the four patient photos from `horizon.gya.net.au/wp-content/uploads/2026/07/` — keep those files live at those URLs (or swap the `src`s to local copies).
 - The `From` domain (`horizondental.com.au`) should be verified as a sender in SMTP2GO for best deliverability.
+- `waiting-room.webp` is still referenced by both pages (clinic section) — keep your existing copy of that file alongside these.
 
 ## A/B test — two landing pages
-This repo contains two variants that link to each other via a small "⇄" button (bottom-left):
+This repo contains two variants. The floating "⇄" switch button has been removed — the pages now cross-link only via a discrete text link at the very end of the footer copyright line ("Pricing edition" / "Classic edition"), also shown in the mobile legal block.
 
 | File | URL (Vercel) | Focus |
 |---|---|---|
@@ -49,4 +52,7 @@ This repo contains two variants that link to each other via a small "⇄" button
 
 Both share the same images, `api/lead.js`, and form (both submit to `/api/lead`). Deploy the whole folder as-is; both pages work immediately.
 
-To run the split test, send traffic to `/` and `/b` (e.g. via your ad platform's rotation, a Vercel rewrite/Edge split, or any A/B tool). Both pages are `noindex` so they won't create duplicate-content issues. The "⇄" switch button is mainly for your own previewing — remove it before a live test if you don't want real visitors hopping between variants (just delete the `<a class="ab-switch" …>` line and the `.ab-switch` CSS block in each file, or ask me to).
+To run the split test, send traffic to `/` and `/b` (e.g. via your ad platform's rotation, a Vercel rewrite/Edge split, or any A/B tool). Both pages are `noindex` so they won't create duplicate-content issues.
+
+## Note on the flat zip
+All files are supplied in a single flat folder (no subfolders). If deploying to Vercel, `lead.js` still needs to sit inside an `api/` folder in the repo so it's exposed at `/api/lead` — move it there after upload (everything else stays at the root).

@@ -313,10 +313,19 @@ body.lead-submitted #thanks{ display:flex; }
   padding:.34em .75em; border-radius:999px; color:var(--ink); background:linear-gradient(180deg,var(--aqua),var(--steel-lite)); }
 /* duration/label badge that sits ABOVE the card title — avoids overlap with long titles */
 .badge.flow{ position:static; display:inline-block; margin:0 0 .8rem; top:auto; right:auto; }
-/* Instagram reels (social proof) */
-.reels{ display:grid; grid-template-columns:1fr 1fr; gap:1.4rem; margin-top:2rem; justify-items:center; align-items:start; }
-.reels .instagram-media{ margin:0 auto !important; }
-@media (max-width:880px){ .reels{ grid-template-columns:1fr; } }
+/* Real Smiles marquee (social proof) */
+.smiles-marquee{ margin-top:2rem; overflow:hidden; position:relative;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);
+  mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent); }
+.smiles-track{ display:flex; width:max-content; animation:smiles-scroll 42s linear infinite; will-change:transform; }
+.smiles-marquee:hover .smiles-track{ animation-play-state:paused; }
+.smile-item{ flex:0 0 auto; margin:0 1.2rem 0 0; padding:8px; border-radius:var(--r); overflow:hidden; }
+.smile-item img{ display:block; height:clamp(300px,40vh,440px); width:auto; border-radius:var(--r-s); }
+@keyframes smiles-scroll{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
+@media (max-width:880px){ .smile-item img{ height:min(46vh,340px); } }
+@media (prefers-reduced-motion:reduce){
+  .smiles-track{ animation:none; }
+  .smiles-marquee{ overflow-x:auto; mask-image:none; -webkit-mask-image:none; } }
 /* click-to-play explainer video (Dr Kozor) */
 .video-embed{ position:relative; width:100%; margin:2.2rem 0 0; aspect-ratio:16/9;
   border-radius:var(--r); overflow:hidden; border:1px solid rgba(255,255,255,.1); box-shadow:0 30px 80px rgba(0,0,0,.5); background:#000; }
@@ -475,14 +484,6 @@ body.lead-submitted #thanks{ display:flex; }
   .reveal{ opacity:1; transform:none; transition:none; }
   .scroll-hint .dot{ animation:none; }
 }
-/* A/B test variant switcher */
-.ab-switch{ position:fixed; left:16px; bottom:18px; z-index:58; display:inline-flex; align-items:center; gap:.4em;
-  padding:.6em 1.05em; border-radius:999px; font-size:.78rem; font-weight:600; letter-spacing:.01em;
-  background:rgba(19,21,14,.82); -webkit-backdrop-filter:blur(10px); backdrop-filter:blur(10px); color:var(--cloud);
-  border:1px solid rgba(207,196,166,.4); text-decoration:none; box-shadow:0 10px 34px rgba(0,0,0,.45);
-  transition:transform .2s var(--ease), border-color .2s, background .2s; }
-.ab-switch:hover{ transform:translateY(-2px); border-color:var(--aqua); background:rgba(38,41,32,.92); }
-@media (max-width:880px){ .ab-switch{ bottom:calc(var(--dock-h) + 12px); left:12px; padding:.5em .85em; font-size:.72rem; } }
 /* fixed-price table (variant B) */
 .price-table-wrap{ margin-top:2rem; border:1px solid rgba(255,255,255,.1); border-radius:var(--r); overflow:hidden; background:rgba(255,255,255,.03); }
 .price-table{ width:100%; border-collapse:collapse; }
@@ -519,8 +520,6 @@ body.lead-submitted #thanks{ display:flex; }
   <button class="btn btn-primary js-book" type="button">Book consultation</button>
 </header>
 
-<!-- A/B test: jump to the price-focused variant -->
-<a class="ab-switch" href="index.html" title="Switch to the standard version (A/B test)"><span aria-hidden="true">⇄</span>&nbsp;Standard version</a>
 
 <main class="deck" id="deck">
 
@@ -652,7 +651,7 @@ body.lead-submitted #thanks{ display:flex; }
         <figure class="ba-item glass"><img src="before-after-10.webp" width="1200" height="416" loading="lazy" alt="Before and after veneers — Horizon Dental patient"></figure>
       </div>
 
-      <p class="disclaimer reveal">These images show real patient results. Individual results may vary, and any dental procedure carries risks and benefits. Before proceeding, you should seek advice from an appropriately qualified health practitioner.<br><br>Treatment provided by Dr David Kozor (AHPRA registration: <span style="opacity:.85">[add registration number]</span>).</p>
+      <p class="disclaimer reveal"><strong>Disclaimer:</strong> Treatment completed by Dr David Benjamin Kozor, B.D.Sc (CSU), AHPRA Reg.&nbsp;No. DEN0001855548. Images shown are of actual Horizon Dental patients who have provided consent. A full smile transformation may involve a combination of treatments including veneers, crowns, dental implants, whitening or orthodontics. Treatment time between before and after images: 6 weeks to 12+ months, depending on the combination of treatments required and individual circumstances. Results vary from patient to patient and depend on individual circumstances, oral health and treatment plan. Any surgical or invasive procedure carries risks. Before proceeding, you should seek a second opinion from an appropriately qualified health practitioner.</p>
 
       <div class="hero-cta reveal" style="margin-top:1.6rem">
         <button class="btn btn-primary btn-lg js-book" type="button">See if veneers suit you</button>
@@ -663,13 +662,22 @@ body.lead-submitted #thanks{ display:flex; }
   <!-- ================= 3.5 REELS / STORIES ================= -->
   <section class="panel" id="stories">
     <div class="panel-inner">
-      <p class="eyebrow reveal">Straight from Instagram</p>
-      <h2 class="title reveal d1">Real stories, real smiles</h2>
-      <p class="lede reveal d2">Watch real veneer journeys from our Sydney CBD practice — tap a reel to play.</p>
-      <div class="reels reveal d2">
-        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DZrsoOwCZkF/" data-instgrm-version="14"></blockquote>
-        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/CsDG0QOBbkg/" data-instgrm-version="14"></blockquote>
+      <p class="eyebrow reveal">Real patient stories</p>
+      <h2 class="title reveal d1">Real Smiles.<br>Real Results.</h2>
+      <p class="lede reveal d2">Real Horizon Dental patients, photographed after their smile transformations at our Sydney CBD practice.</p>
+      <div class="smiles-marquee reveal d2" aria-label="Photos of real Horizon Dental patients">
+        <div class="smiles-track">
+          <figure class="glass smile-item"><img src="https://horizon.gya.net.au/wp-content/uploads/2026/07/Patient-smile-2.webp" loading="lazy" alt="A real Horizon Dental patient smiling after their smile transformation"></figure>
+          <figure class="glass smile-item"><img src="https://horizon.gya.net.au/wp-content/uploads/2026/07/Patient-smile-1.webp" loading="lazy" alt="A real Horizon Dental patient smiling after their smile transformation"></figure>
+          <figure class="glass smile-item"><img src="https://horizon.gya.net.au/wp-content/uploads/2026/07/Patient-smile.webp" loading="lazy" alt="A real Horizon Dental patient smiling after their smile transformation"></figure>
+          <figure class="glass smile-item"><img src="https://horizon.gya.net.au/wp-content/uploads/2026/07/Patient-smile-3.webp" loading="lazy" alt="A real Horizon Dental patient smiling after their smile transformation"></figure>
+          <figure class="glass smile-item" aria-hidden="true"><img src="https://horizon.gya.net.au/wp-content/uploads/2026/07/Patient-smile-2.webp" loading="lazy" alt="A real Horizon Dental patient smiling after their smile transformation"></figure>
+          <figure class="glass smile-item" aria-hidden="true"><img src="https://horizon.gya.net.au/wp-content/uploads/2026/07/Patient-smile-1.webp" loading="lazy" alt="A real Horizon Dental patient smiling after their smile transformation"></figure>
+          <figure class="glass smile-item" aria-hidden="true"><img src="https://horizon.gya.net.au/wp-content/uploads/2026/07/Patient-smile.webp" loading="lazy" alt="A real Horizon Dental patient smiling after their smile transformation"></figure>
+          <figure class="glass smile-item" aria-hidden="true"><img src="https://horizon.gya.net.au/wp-content/uploads/2026/07/Patient-smile-3.webp" loading="lazy" alt="A real Horizon Dental patient smiling after their smile transformation"></figure>
+        </div>
       </div>
+      <p class="disclaimer reveal" style="margin-top:1.2rem">Images shown are of actual Horizon Dental patients who have provided consent. Individual results vary.</p>
       <div class="hero-cta reveal d3" style="margin-top:1.8rem">
         <button class="btn btn-primary btn-lg js-book" type="button">Start my smile journey</button>
       </div>
@@ -896,8 +904,8 @@ body.lead-submitted #thanks{ display:flex; }
           <iframe class="map-embed" title="Map to Horizon Dental, 187 Macquarie Street Sydney" src="https://www.google.com/maps?q=Horizon%20Dental%20187%20Macquarie%20Street%20Sydney%20NSW%202000&z=16&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
         <p style="font-size:.72rem; color:var(--mist-dim); line-height:1.6;">For suitable patients only. Results may vary between individuals, and any dental procedure carries risks and benefits. Veneer treatment requires a consultation to determine suitability. Before proceeding, you should seek advice from an appropriately qualified health practitioner. Weekly payment plans (from $100/week) are subject to provider terms and approval.</p>
-        <p style="font-size:.72rem; color:var(--mist); margin-top:.8rem;">Dr David Kozor — Dental Practitioner. AHPRA registration: <span style="opacity:.8">[add registration number]</span>.</p>
-        <p style="font-size:.72rem; color:var(--mist-dim); margin-top:1rem;">© Horizon Dental. All rights reserved.</p>
+        <p style="font-size:.72rem; color:var(--mist); margin-top:.8rem;">Dr David Benjamin Kozor, B.D.Sc (CSU) — Dental Practitioner. AHPRA Reg. No. DEN0001855548.</p>
+        <p style="font-size:.72rem; color:var(--mist-dim); margin-top:1rem;">© Horizon Dental. All rights reserved. · <a href="index.html" style="color:inherit;text-decoration:none;opacity:.55;">Classic edition</a></p>
       </div>
     </div>
   </section>
@@ -942,8 +950,8 @@ body.lead-submitted #thanks{ display:flex; }
       <p>For suitable patients only. Results may vary between individuals. Veneer treatment requires a consultation to determine suitability.</p>
       <p>Any dental procedure carries risks and benefits. Before proceeding, you should seek advice from an appropriately qualified health practitioner.</p>
       <p>Weekly payment plans (from $100/week) are subject to provider terms and approval.</p>
-      <p class="reg">Dr David Kozor — Dental Practitioner. AHPRA registration: <span style="opacity:.8">[add registration number]</span>.</p>
-      <p class="copy">© Horizon Dental, All rights reserved · Website Design by <a href="https://generateyouraudience.com/" target="_blank" rel="noopener">Generate Your Audience</a></p>
+      <p class="reg">Dr David Benjamin Kozor, B.D.Sc (CSU) — Dental Practitioner. AHPRA Reg. No. DEN0001855548.</p>
+      <p class="copy">© Horizon Dental, All rights reserved · Website Design by <a href="https://generateyouraudience.com/" target="_blank" rel="noopener">Generate Your Audience</a> · <a href="index.html" style="color:inherit;text-decoration:none;opacity:.55;">Classic edition</a></p>
     </div>
   </div>
 </footer>
@@ -1276,7 +1284,5 @@ mqMobile.addEventListener("change", ()=>{ deck.scrollTo({left:0}); window.scroll
 refreshLayout();
 
 </script>
-<!-- Instagram embeds (renders the reels in the Stories section) -->
-<script async src="https://www.instagram.com/embed.js"></script>
 </body>
 </html>
