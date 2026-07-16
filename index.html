@@ -1048,7 +1048,7 @@ function wireForm(form){
     const chips = q => { const fs=form.querySelector('fieldset.q[data-q="'+q+'"]'); if(!fs) return "";
       return Array.from(fs.querySelectorAll(".opt.is-selected")).map(b=>b.dataset.value).join(", "); };
     const data = { firstName:first.v, lastName:last.v, email:email.v, phoneNumber:phone.v,
-      smileGoals: chips("goals"), suitability: chips("suitability") };
+      smileGoals: chips("goals"), suitability: chips("suitability"), source:"veneers-landing-classic" };
 
     const submitBtn = form.querySelector(".submit-btn");
     submitBtn.disabled = true; submitBtn.textContent = "Sending…";

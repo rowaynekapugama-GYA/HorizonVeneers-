@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="robots" content="noindex, follow">
+<title>Dentist Sydney CBD — New Patient Exam &amp; Clean $270 | Horizon Dental</title>
+<meta name="description" content="Your dentist in Sydney CBD, on Macquarie Street near Martin Place. Comprehensive new patient exam & clean for $270, all major health funds with HICAPS on-the-spot claiming, payment plans and easy online booking.">
+<link rel="icon" href="logo.svg">
+<meta name="theme-color" content="#1b1d14">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Dentist Sydney CBD — New Patient Exam &amp; Clean $270 | Horizon Dental">
+<meta property="og:description" content="Modern dental care on Macquarie Street, Sydney CBD. $270 all-inclusive new patient exam & clean, HICAPS on-the-spot claiming and online booking.">
+
+<!-- Fonts: Fraunces (display serif) + Plus Jakarta Sans (UI / body) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* =========================================================================
+   HORIZON DENTAL — Dentist Sydney CBD · Google Ads landing page (Ad Group 1)
+   Single file. Vertical scroll on all devices. Persistent Call + Book CTAs.
+   ========================================================================= */
+
+:root{
+  /* Brand palette (Horizon Dental — olive / champagne on dark olive) */
+  --ink:        #13150e;
+  --navy-900:   #1b1d14;
+  --navy-800:   #262920;
+  --steel:      #7c7b64;   /* primary brand olive */
+  --steel-deep: #595844;
+  --steel-lite: #9d9c80;
+  --aqua:       #cfc4a6;   /* champagne accent */
+  --mist:       #c4c1ad;
+  --mist-dim:   #908d79;
+  --cloud:      #f3efe4;
+  --cream:      #f8f5ee;
+
+  --glass:        rgba(255,255,255,.07);
+  --glass-2:      rgba(255,255,255,.045);
+  --glass-edge:   rgba(255,255,255,.18);
+  --glass-blur:   blur(22px) saturate(135%);
+  --r:   24px;
+  --r-s: 16px;
+  --r-l: 32px;
+
+  --bar-h: 64px;
+  --dock-h: 72px;
+  --maxw: 1140px;
+
+  --shadow-soft: 0 18px 50px -20px rgba(0,0,0,.55);
+  --shadow-card: 0 22px 60px -24px rgba(0,0,0,.6), inset 0 1px 0 rgba(255,255,255,.22);
+  --ease: cubic-bezier(.16,.84,.34,1);
+}
+
+*{ box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
+body{
+  margin:0; background:var(--ink); color:var(--cloud);
+  font-family:"Plus Jakarta Sans",system-ui,-apple-system,sans-serif;
+  font-size:16.5px; line-height:1.6; -webkit-font-smoothing:antialiased;
+}
+img{ max-width:100%; }
+a{ color:var(--aqua); }
+b,strong{ color:var(--cloud); }
+
+/* ambient background */
+.bg{ position:fixed; inset:0; z-index:-1; overflow:hidden; background:
+  radial-gradient(120vmax 90vmax at 78% -10%, #23261b 0%, var(--ink) 55%),
+  radial-gradient(90vmax 70vmax at -10% 110%, #202318 0%, transparent 60%), var(--ink); }
+.bg::after{ content:""; position:absolute; inset:0; opacity:.05; mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+
+/* ---------- type ---------- */
+h1,h2,h3{ font-family:"Fraunces",serif; font-weight:500; line-height:1.12; margin:0 0 .5em; letter-spacing:-.01em; color:#fff; }
+h1{ font-size:clamp(2.3rem,5.4vw,3.9rem); }
+h2{ font-size:clamp(1.85rem,3.6vw,2.7rem); }
+h3{ font-size:1.28rem; font-weight:600; }
+h1 em, h2 em{ font-style:italic; color:var(--aqua); }
+.eyebrow{ display:flex; align-items:center; gap:.6em; font-size:.8rem; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:var(--aqua); margin:0 0 1.1rem; }
+.eyebrow::before{ content:""; width:26px; height:1px; background:var(--aqua); opacity:.7; }
+.lede{ font-size:clamp(1.02rem,1.6vw,1.16rem); color:var(--mist); max-width:62ch; margin:0 0 1rem; }
+.disclaimer{ margin-top:1.6rem; font-size:.78rem; color:var(--mist-dim); line-height:1.6; max-width:86ch; }
+
+/* ---------- layout ---------- */
+section{ padding:clamp(64px,9vh,110px) clamp(20px,5vw,48px); }
+.inner{ max-width:var(--maxw); margin:0 auto; }
+.grid-2{ display:grid; grid-template-columns:1.05fr .95fr; gap:clamp(2rem,5vw,4rem); align-items:center; }
+@media (max-width:900px){ .grid-2{ grid-template-columns:1fr; } }
+
+/* ---------- glass ---------- */
+.glass{
+  position:relative; background:linear-gradient(160deg, var(--glass), var(--glass-2));
+  -webkit-backdrop-filter:var(--glass-blur); backdrop-filter:var(--glass-blur);
+  border:1px solid var(--glass-edge); border-radius:var(--r); box-shadow:var(--shadow-card);
+}
+.glass::before{ content:""; position:absolute; inset:0 0 auto; height:1px; border-radius:var(--r) var(--r) 0 0;
+  background:linear-gradient(90deg, transparent, rgba(255,255,255,.5), transparent); opacity:.5; pointer-events:none; }
+
+/* ---------- buttons ---------- */
+.btn{ display:inline-flex; align-items:center; justify-content:center; gap:.55em;
+  font:inherit; font-weight:700; font-size:1rem; letter-spacing:.01em; cursor:pointer;
+  border-radius:999px; padding:.95em 1.9em; text-decoration:none; border:1px solid transparent;
+  transition:transform .2s var(--ease), box-shadow .2s, background .2s, border-color .2s; }
+.btn:hover{ transform:translateY(-2px); }
+.btn:focus-visible{ outline:2px solid var(--aqua); outline-offset:3px; }
+.btn-primary{ background:linear-gradient(160deg, var(--steel-lite), var(--steel) 55%, var(--steel-deep)); color:#fff;
+  box-shadow:0 14px 40px -12px rgba(124,123,100,.65), inset 0 1px 0 rgba(255,255,255,.35); }
+.btn-primary:hover{ box-shadow:0 20px 50px -12px rgba(124,123,100,.8), inset 0 1px 0 rgba(255,255,255,.4); }
+.btn-ghost{ background:rgba(255,255,255,.06); color:var(--cloud); border-color:rgba(255,255,255,.28);
+  -webkit-backdrop-filter:blur(10px); backdrop-filter:blur(10px); }
+.btn-ghost:hover{ border-color:var(--aqua); background:rgba(255,255,255,.1); }
+.btn-lg{ font-size:1.08rem; padding:1.05em 2.2em; }
+.btn svg{ width:1.05em; height:1.05em; flex:0 0 auto; }
+.cta-row{ display:flex; flex-wrap:wrap; gap:.9rem; align-items:center; margin-top:1.6rem; }
+.cta-note{ font-size:.8rem; color:var(--mist-dim); width:100%; margin:.2rem 0 0; }
+
+/* ---------- top bar ---------- */
+.topbar{ position:fixed; inset:0 0 auto; z-index:60; height:var(--bar-h);
+  display:flex; align-items:center; justify-content:space-between; gap:1rem;
+  padding:0 clamp(16px,4vw,40px);
+  background:rgba(19,21,14,.72); -webkit-backdrop-filter:blur(16px) saturate(140%); backdrop-filter:blur(16px) saturate(140%);
+  border-bottom:1px solid rgba(255,255,255,.08); }
+.topbar img{ height:32px; width:auto; display:block; }
+.topbar-actions{ display:flex; align-items:center; gap:.7rem; }
+.topbar .btn{ padding:.62em 1.3em; font-size:.92rem; }
+.topbar-phone{ display:inline-flex; align-items:center; gap:.5em; color:var(--cloud); text-decoration:none; font-weight:700; font-size:.95rem; white-space:nowrap; }
+.topbar-phone svg{ width:1em; height:1em; color:var(--aqua); }
+.topbar-phone:hover{ color:var(--aqua); }
+@media (max-width:640px){ .topbar-phone span{ display:none; } .topbar-phone{ padding:.55em; border:1px solid rgba(255,255,255,.25); border-radius:999px; } }
+
+/* ---------- hero ---------- */
+#hero{ position:relative; isolation:isolate; min-height:min(92vh,860px); display:flex; align-items:center;
+  padding-top:calc(var(--bar-h) + clamp(40px,7vh,72px)); }
+.hero-video-wrap{ position:absolute; inset:0; z-index:0; overflow:hidden; pointer-events:none; background:var(--navy-900); }
+.hero-video-wrap iframe{ position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+  width:max(100vw,177.78vh); height:max(100vh,56.25vw); border:0; pointer-events:none; }
+.hero-veil{ position:absolute; inset:0; z-index:1; pointer-events:none;
+  background:
+    linear-gradient(100deg, rgba(19,21,14,.93) 0%, rgba(19,21,14,.74) 34%, rgba(19,21,14,.36) 62%, rgba(19,21,14,.52) 100%),
+    linear-gradient(180deg, rgba(19,21,14,.5) 0%, transparent 24%, transparent 68%, rgba(19,21,14,.72) 100%); }
+@media (max-width:880px){
+  .hero-veil{ background:linear-gradient(180deg, rgba(19,21,14,.78) 0%, rgba(19,21,14,.62) 45%, rgba(19,21,14,.92) 100%); } }
+#hero .inner{ position:relative; z-index:2; width:100%; }
+.hero-sub{ font-size:clamp(1.05rem,1.8vw,1.25rem); color:var(--mist); max-width:56ch; margin:0 0 1.4rem; }
+.hero-sub b{ color:#fff; }
+
+.offer-chip{ display:inline-flex; align-items:center; gap:1rem; padding:.9rem 1.3rem; border-radius:var(--r-s); margin:0 0 1.4rem; max-width:560px; }
+.offer-chip .price{ font-family:"Fraunces",serif; font-size:2rem; font-weight:600; color:var(--aqua); line-height:1; white-space:nowrap; }
+.offer-chip p{ margin:0; font-size:.9rem; color:var(--mist); }
+.offer-chip b{ display:block; color:#fff; font-size:.98rem; margin-bottom:.15rem; }
+
+.trust{ list-style:none; display:flex; flex-wrap:wrap; gap:.5rem 1.4rem; padding:0; margin:1.2rem 0 0; }
+.trust li{ display:flex; align-items:center; gap:.55em; font-size:.94rem; color:var(--mist); }
+.check{ display:inline-grid; place-items:center; width:1.25em; height:1.25em; border-radius:50%; background:rgba(207,196,166,.16); color:var(--aqua); flex:0 0 auto; }
+.check svg{ width:.7em; height:.7em; }
+
+.reviews{ display:flex; align-items:center; gap:.7rem; margin-top:1.7rem; flex-wrap:wrap; }
+.reviews .stars{ color:#f0c24c; font-size:1.3rem; letter-spacing:.12em; line-height:1; white-space:nowrap; }
+.reviews-text{ color:var(--mist); font-size:.98rem; }
+.reviews-text strong{ color:#fff; }
+
+/* ---------- ticks list ---------- */
+.ticks{ list-style:none; padding:0; margin:1.2rem 0 0; display:grid; gap:.65rem; }
+.ticks li{ display:flex; gap:.65em; align-items:flex-start; color:var(--mist); }
+.ticks li .check{ margin-top:.22em; }
+
+/* ---------- info cards ---------- */
+.cards{ display:grid; gap:1.2rem; margin-top:2.2rem; }
+.cards.three{ grid-template-columns:repeat(3,1fr); }
+.cards.two{ grid-template-columns:repeat(2,1fr); }
+@media (max-width:960px){ .cards.three{ grid-template-columns:1fr; } }
+@media (max-width:760px){ .cards.two{ grid-template-columns:1fr; } }
+.card{ padding:1.6rem 1.5rem; }
+.card .ico{ display:inline-grid; place-items:center; width:46px; height:46px; border-radius:14px;
+  background:rgba(207,196,166,.14); color:var(--aqua); margin-bottom:1rem; }
+.card .ico svg{ width:22px; height:22px; }
+.card p{ color:var(--mist); font-size:.95rem; margin:.4rem 0 0; }
+
+/* ---------- HICAPS band ---------- */
+.hicaps-band{ padding:2rem clamp(1.4rem,3vw,2.4rem); }
+.hicaps-band .grid-2{ align-items:start; }
+.fund-chips{ display:flex; flex-wrap:wrap; gap:.55rem; margin-top:1.3rem; }
+.fund-chips span{ padding:.45em 1em; border-radius:999px; font-size:.84rem; font-weight:600; color:var(--cloud);
+  background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.16); }
+.big-stat{ font-family:"Fraunces",serif; font-size:clamp(2.4rem,4.5vw,3.4rem); color:var(--aqua); line-height:1; }
+.big-stat + p{ color:var(--mist); font-size:.95rem; }
+
+/* ---------- dentists ---------- */
+.dentists{ display:grid; grid-template-columns:1fr 1fr; gap:1.4rem; margin-top:2.2rem; }
+@media (max-width:860px){ .dentists{ grid-template-columns:1fr; } }
+.dentist-card{ overflow:hidden; display:flex; flex-direction:column; }
+.dentist-card img{ display:block; width:100%; height:340px; object-fit:cover; object-position:center 18%; }
+.dentist-card .body{ padding:1.5rem 1.5rem 1.7rem; display:flex; flex-direction:column; flex:1; }
+.dentist-card .role{ font-size:.76rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:var(--aqua); margin:0 0 .4rem; }
+.dentist-card h3{ margin-bottom:.15rem; font-size:1.45rem; }
+.dentist-card .quals{ color:var(--mist-dim); font-size:.88rem; margin:0 0 .9rem; }
+.dentist-card blockquote{ margin:0 0 .9rem; padding-left:.9rem; border-left:2px solid var(--aqua);
+  font-family:"Fraunces",serif; font-style:italic; color:var(--cloud); font-size:1.02rem; line-height:1.5; }
+.dentist-card p{ color:var(--mist); font-size:.94rem; margin:0; }
+
+/* ---------- before / after ---------- */
+.ba-gallery{ display:grid; grid-template-columns:repeat(2,1fr); gap:1.2rem; margin-top:2.2rem; align-items:start; }
+@media (max-width:760px){ .ba-gallery{ grid-template-columns:1fr; } }
+.ba-item{ position:relative; margin:0; padding:8px; border-radius:var(--r); overflow:hidden; }
+.ba-item img{ display:block; width:100%; height:auto; border-radius:var(--r-s); }
+
+/* ---------- services ---------- */
+.services{ display:grid; grid-template-columns:repeat(3,1fr); gap:1.1rem; margin-top:2.2rem; }
+@media (max-width:960px){ .services{ grid-template-columns:repeat(2,1fr); } }
+@media (max-width:640px){ .services{ grid-template-columns:1fr; } }
+.service{ padding:1.35rem 1.3rem; }
+.service h3{ font-size:1.08rem; margin-bottom:.3rem; display:flex; justify-content:space-between; align-items:baseline; gap:.6rem; }
+.service .from{ font-family:"Plus Jakarta Sans",sans-serif; font-size:.82rem; font-weight:700; color:var(--aqua); white-space:nowrap; }
+.service p{ color:var(--mist); font-size:.9rem; margin:0; }
+
+/* ---------- price strip ---------- */
+.price-table{ margin-top:2.2rem; padding:.4rem 1.5rem; }
+.price-row{ display:flex; justify-content:space-between; align-items:baseline; gap:1rem; padding:1.05rem 0; border-bottom:1px solid rgba(255,255,255,.08); }
+.price-row:last-child{ border-bottom:0; }
+.price-row .item b{ display:block; font-size:1rem; }
+.price-row .item span{ font-size:.84rem; color:var(--mist-dim); }
+.price-row .fee{ font-family:"Fraunces",serif; font-size:1.3rem; color:var(--aqua); white-space:nowrap; }
+
+/* ---------- location ---------- */
+.map-embed{ display:block; width:100%; height:320px; border:0; border-radius:var(--r-s); filter:grayscale(.2) contrast(1.02); }
+.loc-lines{ list-style:none; padding:0; margin:1.2rem 0 0; display:grid; gap:.8rem; }
+.loc-lines li{ display:flex; gap:.7em; align-items:flex-start; color:var(--mist); font-size:.97rem; }
+.loc-lines svg{ width:1.15em; height:1.15em; color:var(--aqua); flex:0 0 auto; margin-top:.2em; }
+.loc-lines a{ color:#fff; font-weight:600; text-decoration:none; }
+.loc-lines a:hover{ color:var(--aqua); }
+
+/* ---------- FAQ ---------- */
+.faq{ margin-top:2.2rem; display:grid; gap:.8rem; }
+.faq details{ border-radius:var(--r-s); overflow:hidden; }
+.faq summary{ list-style:none; cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:1rem;
+  padding:1.15rem 1.4rem; font-weight:700; font-size:1.02rem; color:var(--cloud); }
+.faq summary::-webkit-details-marker{ display:none; }
+.faq summary .pm{ flex:0 0 auto; font-size:1.3rem; color:var(--aqua); transition:transform .25s var(--ease); line-height:1; }
+.faq details[open] summary .pm{ transform:rotate(45deg); }
+.faq .a{ padding:0 1.4rem 1.3rem; color:var(--mist); font-size:.96rem; }
+.faq summary:focus-visible{ outline:2px solid var(--aqua); outline-offset:-2px; }
+
+/* ---------- final cta ---------- */
+.final-cta{ text-align:center; }
+.final-cta .cta-row{ justify-content:center; }
+
+/* ---------- footer ---------- */
+footer{ padding:clamp(40px,6vh,72px) clamp(20px,5vw,48px) calc(2.6rem + var(--dock-h)); border-top:1px solid rgba(255,255,255,.08); }
+@media (min-width:881px){ footer{ padding-bottom:2.6rem; } }
+.footer-inner{ max-width:var(--maxw); margin:0 auto; }
+.legal{ font-size:.76rem; color:var(--mist-dim); line-height:1.7; max-width:100ch; }
+.legal p{ margin:.5rem 0; }
+.legal .reg{ color:var(--mist); }
+
+/* ---------- mobile CTA dock ---------- */
+.dock{ position:fixed; inset:auto 0 0; z-index:70; display:none; gap:.7rem;
+  padding:.7rem clamp(14px,4vw,20px) calc(.7rem + env(safe-area-inset-bottom));
+  background:rgba(19,21,14,.86); -webkit-backdrop-filter:blur(16px) saturate(140%); backdrop-filter:blur(16px) saturate(140%);
+  border-top:1px solid rgba(255,255,255,.1); }
+.dock .btn{ flex:1; padding:.95em .5em; font-size:.98rem; }
+@media (max-width:880px){ .dock{ display:flex; } body{ padding-bottom:var(--dock-h); } }
+
+/* ---------- reveal ---------- */
+.reveal{ opacity:0; transform:translateY(22px); transition:opacity .7s var(--ease), transform .7s var(--ease); }
+.reveal.in{ opacity:1; transform:none; }
+.d1{ transition-delay:.08s; } .d2{ transition-delay:.16s; } .d3{ transition-delay:.24s; }
+@media (prefers-reduced-motion:reduce){ .reveal{ opacity:1; transform:none; transition:none; } html{ scroll-behavior:auto; } }
+</style>
+</head>
+<body>
+
+<div class="bg" aria-hidden="true"></div>
+
+<!-- ================= TOP BAR (sticky, all devices) ================= -->
+<header class="topbar">
+  <a href="#hero" aria-label="Horizon Dental — back to top">
+    <img src="logo-light.svg" alt="Horizon Dental">
+  </a>
+  <div class="topbar-actions">
+    <a class="topbar-phone" href="tel:0292211685" aria-label="Call Horizon Dental on 02 9221 1685">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.4 2.1L8.1 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.6 2Z"/></svg>
+      <span>02&nbsp;9221&nbsp;1685</span>
+    </a>
+    <a class="btn btn-primary js-book-online" href="https://www.centaurportal.com/d4w/org-3069/extended_search?location=3518&randomNumber=9709a837c4d75f27b96c8835b48bb60639daff63b6394126c4e3313f902a4adb&shortVer=false&sourceID=null" target="_blank" rel="noopener">Book online</a>
+  </div>
+</header>
+
+<main>
+
+  <!-- ================= HERO ================= -->
+  <section id="hero">
+    <div class="hero-video-wrap" aria-hidden="true">
+      <iframe src="https://player.vimeo.com/video/1203831114?background=1&autopause=0&dnt=1" allow="autoplay; fullscreen; picture-in-picture" title="Horizon Dental background film" tabindex="-1"></iframe>
+    </div>
+    <div class="hero-veil" aria-hidden="true"></div>
+    <div class="inner">
+      <p class="eyebrow reveal">Macquarie Street · near Martin Place</p>
+      <h1 class="reveal d1">Your dentist in <em>Sydney CBD</em></h1>
+      <p class="hero-sub reveal d2">Modern, gentle dental care on Level 14 of Park House, Macquarie Street — easy to reach from anywhere in the city, with <b>transparent pricing and on-the-spot HICAPS health fund claiming</b>.</p>
+
+      <div class="glass offer-chip reveal d2">
+        <span class="price">$270</span>
+        <p><b>All-inclusive new patient exam &amp; clean</b>Comprehensive examination, full professional clean, X-rays where clinically indicated and a personalised treatment plan — no hidden extras.</p>
+      </div>
+
+      <div class="cta-row reveal d2">
+        <a class="btn btn-primary btn-lg js-book-online" href="https://www.centaurportal.com/d4w/org-3069/extended_search?location=3518&randomNumber=9709a837c4d75f27b96c8835b48bb60639daff63b6394126c4e3313f902a4adb&shortVer=false&sourceID=null" target="_blank" rel="noopener">Book online in minutes</a>
+        <a class="btn btn-ghost btn-lg js-call" href="tel:0292211685">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.4 2.1L8.1 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.6 2Z"/></svg>
+          Call 02 9221 1685
+        </a>
+      </div>
+
+      <ul class="trust reveal d3">
+        <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 6"/></svg></span>All major health funds + HICAPS</li>
+        <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 6"/></svg></span>Transparent pricing, no hidden fees</li>
+        <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 6"/></svg></span>New patients welcome</li>
+      </ul>
+
+      <div class="reviews reveal d3" aria-label="Rated 5.0 out of 5 from 106 Google reviews">
+        <span class="stars" aria-hidden="true">★★★★★</span>
+        <span class="reviews-text"><strong>5.0</strong> from <strong>106</strong> Google reviews</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= NEW PATIENT OFFER ================= -->
+  <section id="new-patients">
+    <div class="inner grid-2">
+      <div>
+        <p class="eyebrow reveal">New patients</p>
+        <h2 class="reveal d1">Everything in your first visit, one clear price: <em>$270</em></h2>
+        <p class="lede reveal d2">Your first appointment is designed to give you a complete picture of your oral health — and a clear, honest plan. One all-inclusive fee, agreed before you sit in the chair.</p>
+        <ul class="ticks reveal d2">
+          <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 6"/></svg></span>Comprehensive dental examination</li>
+          <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 6"/></svg></span>Full professional scale and clean</li>
+          <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 6"/></svg></span>X-rays where clinically indicated</li>
+          <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 6"/></svg></span>Personalised treatment planning</li>
+          <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 6"/></svg></span>On-the-spot HICAPS health fund claiming</li>
+        </ul>
+        <div class="cta-row reveal d3">
+          <a class="btn btn-primary btn-lg js-book-online" href="https://www.centaurportal.com/d4w/org-3069/extended_search?location=3518&randomNumber=9709a837c4d75f27b96c8835b48bb60639daff63b6394126c4e3313f902a4adb&shortVer=false&sourceID=null" target="_blank" rel="noopener">Book your first visit</a>
+          <p class="cta-note">Depending on your health fund, your out-of-pocket cost may be significantly reduced with an on-the-spot HICAPS rebate.</p>
+        </div>
+      </div>
+      <div class="glass ba-item reveal d2" style="padding:8px;">
+        <img src="reception.webp" alt="The modern, calm reception and waiting area at Horizon Dental, Sydney CBD" loading="lazy" style="border-radius:var(--r-s); display:block; width:100%;">
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= HICAPS & PAYMENTS ================= -->
+  <section id="hicaps">
+    <div class="inner">
+      <p class="eyebrow reveal">Health funds &amp; payments</p>
+      <h2 class="reveal d1">HICAPS on-the-spot claiming — <em>pay only the gap</em></h2>
+      <p class="lede reveal d2">We accept all major Australian health funds through HICAPS. Swipe your health fund card at reception and your rebate is claimed instantly — no receipts, no paperwork, no waiting for reimbursement.</p>
+
+      <div class="glass hicaps-band reveal d2" style="margin-top:2rem;">
+        <div class="grid-2">
+          <div>
+            <span class="big-stat">30–50%</span>
+            <p>Depending on your health fund and level of cover, your out-of-pocket expense may be 30–50% less than the listed fee. All pricing shown is indicative of gross totals before your rebate.</p>
+            <div class="fund-chips">
+              <span>All major health funds</span><span>HICAPS on-the-spot</span><span>Zip Pay &amp; Zip Money</span><span>Superannuation options</span><span>Medicare CDBS</span>
+            </div>
+          </div>
+          <ul class="ticks" style="margin-top:.4rem;">
+            <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 6"/></svg></span><span><b>HICAPS on the spot.</b> Claim your rebate at the time of your visit and only pay the difference.</span></li>
+            <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 6"/></svg></span><span><b>Zip payment plans.</b> Spread larger treatments into weekly or fortnightly repayments — interest-free options available, subject to approval.</span></li>
+            <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 6"/></svg></span><span><b>Superannuation access.</b> You may be able to access your super for eligible dental treatment — ask our team how.</span></li>
+            <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 6"/></svg></span><span><b>Child Dental Benefits Schedule.</b> Eligible children may receive up to $1,000 towards basic dental services over two years.</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= DENTISTS ================= -->
+  <section id="dentists">
+    <div class="inner">
+      <p class="eyebrow reveal">Meet your dentists</p>
+      <h2 class="reveal d1">The people behind your smile</h2>
+      <p class="lede reveal d2">Every visit at Horizon Dental is with an experienced, registered dentist who takes the time to explain your options clearly — and makes sure you're comfortable at every step.</p>
+
+      <div class="dentists">
+        <article class="glass dentist-card reveal d2">
+          <img src="https://smile-search-production-uploads-kmfcmkcr.s3.ap-southeast-2.amazonaws.com/images-gallery/1f0d3bf8-58ab-4e6b-8742-ef2bafb07dcd/horizon-dental/1784163173256-CpJ0QcZRYsV1XrNOWIP4G.png" alt="Dr David Kozor, Principal Dentist at Horizon Dental" loading="lazy">
+          <div class="body">
+            <p class="role">Principal Dentist</p>
+            <h3>Dr David Kozor</h3>
+            <p class="quals">B.D.Sc (Charles Sturt University)</p>
+            <blockquote>"To me, exceptional dentistry is a combination of two things — excellent clinical skill and the ability to facilitate an outstanding patient experience."</blockquote>
+            <p>Born and raised in Sydney, Dr Kozor has been in private practice since 2013, with a strong focus on aesthetic dentistry. What matters most to David is that patients feel confident and happy about their teeth — and genuinely enjoy their time at Horizon Dental.</p>
+          </div>
+        </article>
+        <article class="glass dentist-card reveal d3">
+          <img src="https://smile-search-production-uploads-kmfcmkcr.s3.ap-southeast-2.amazonaws.com/images-gallery/1f0d3bf8-58ab-4e6b-8742-ef2bafb07dcd/horizon-dental/1784164522254-KbtRkdowbI7XzJOxUn-bV.png" alt="Dr Lucky Masilamani, Associate Dentist at Horizon Dental" loading="lazy">
+          <div class="body">
+            <p class="role">Associate Dentist</p>
+            <h3>Dr Lucky Masilamani</h3>
+            <p class="quals">B.D.S (University of Otago)</p>
+            <blockquote>"I love building genuine relationships with patients and making every visit calm and comfortable."</blockquote>
+            <p>Originally from New Zealand, Dr Lucky graduated from the University of Otago in 2016 and regularly undertakes advanced training. With a special interest in cosmetic dentistry, she focuses on natural-looking results and calm, personalised care that makes every appointment reassuring.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= BEFORE & AFTER ================= -->
+  <section id="results">
+    <div class="inner">
+      <p class="eyebrow reveal">Real transformations</p>
+      <h2 class="reveal d1">Before &amp; after results at Horizon Dental</h2>
+      <p class="lede reveal d2">From routine care to complete smile transformations — these are real Horizon Dental patients treated at our Macquarie Street practice.</p>
+
+      <div class="ba-gallery">
+        <figure class="glass ba-item reveal d1"><img src="before-after-2.webp" width="1200" height="416" loading="lazy" alt="Before and after dental treatment — Horizon Dental patient"></figure>
+        <figure class="glass ba-item reveal d2"><img src="before-after-4.webp" width="1200" height="416" loading="lazy" alt="Before and after dental treatment — Horizon Dental patient"></figure>
+        <figure class="glass ba-item reveal d2"><img src="before-after-7.webp" width="1200" height="416" loading="lazy" alt="Before and after dental treatment — Horizon Dental patient"></figure>
+        <figure class="glass ba-item reveal d3"><img src="before-after-8.webp" width="1200" height="416" loading="lazy" alt="Before and after dental treatment — Horizon Dental patient"></figure>
+      </div>
+
+      <p class="disclaimer reveal"><strong>Disclaimer:</strong> Treatment completed by Dr David Benjamin Kozor, B.D.Sc (CSU), AHPRA Reg.&nbsp;No. DEN0001855548. Images shown are of actual Horizon Dental patients who have provided consent. A full smile transformation may involve a combination of treatments including veneers, crowns, dental implants, whitening or orthodontics. Treatment time between before and after images: 6 weeks to 12+ months, depending on the combination of treatments required and individual circumstances. Results vary from patient to patient and depend on individual circumstances, oral health and treatment plan. Any surgical or invasive procedure carries risks. Before proceeding, you should seek a second opinion from an appropriately qualified health practitioner.</p>
+    </div>
+  </section>
+
+  <!-- ================= SERVICES ================= -->
+  <section id="services">
+    <div class="inner">
+      <p class="eyebrow reveal">Comprehensive care</p>
+      <h2 class="reveal d1">Every smile, every need — under one roof</h2>
+      <p class="lede reveal d2">From your six-monthly check-up to cosmetic and restorative treatment, everything is handled in-house at our Sydney CBD practice with the latest dental technology.</p>
+
+      <div class="services">
+        <div class="glass service reveal d1"><h3>Check-up &amp; Clean <span class="from">$270</span></h3><p>Comprehensive exam, professional clean and X-rays where indicated. Prevention is better than cure.</p></div>
+        <div class="glass service reveal d1"><h3>Fillings <span class="from">from $190</span></h3><p>Tooth-coloured composite and ceramic restorations that blend naturally with your smile.</p></div>
+        <div class="glass service reveal d1"><h3>Teeth Whitening <span class="from">from $390</span></h3><p>Take-home kits and in-chair laser whitening, tailored to your teeth and sensitivity.</p></div>
+        <div class="glass service reveal d2"><h3>Emergency Dentistry</h3><p>Time is reserved every business day for dental emergencies — toothache, chips and breaks. Call early for same-day care.</p></div>
+        <div class="glass service reveal d2"><h3>Crowns &amp; Bridges <span class="from">from $1,700</span></h3><p>CEREC same-day ceramic crowns for strength, durability and natural aesthetics.</p></div>
+        <div class="glass service reveal d2"><h3>Root Canal Treatment <span class="from">from $1,300</span></h3><p>Gentle, efficient endodontic care performed with a dental microscope.</p></div>
+        <div class="glass service reveal d3"><h3>Veneers <span class="from">from $1,700</span></h3><p>Bespoke porcelain and composite veneers, crafted with a local master dental technician.</p></div>
+        <div class="glass service reveal d3"><h3>Invisalign <span class="from">from $57/week</span></h3><p>Discreet, removable clear aligners for adults — packages include retainers and whitening.</p></div>
+        <div class="glass service reveal d3"><h3>Dental Implants</h3><p>Permanent tooth replacement, planned with 3D CBCT imaging for precision and safety.</p></div>
+      </div>
+      <p class="disclaimer reveal">All fees are indicative "from" prices before any health fund rebate, and are subject to change. A personalised quote is provided at your consultation. Weekly amounts refer to Zip payment plans, subject to provider terms and approval.</p>
+
+      <div class="cta-row reveal">
+        <a class="btn btn-primary btn-lg js-book-online" href="https://www.centaurportal.com/d4w/org-3069/extended_search?location=3518&randomNumber=9709a837c4d75f27b96c8835b48bb60639daff63b6394126c4e3313f902a4adb&shortVer=false&sourceID=null" target="_blank" rel="noopener">Book an appointment</a>
+        <a class="btn btn-ghost btn-lg js-call" href="tel:0292211685">Call 02 9221 1685</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PRICE TRANSPARENCY ================= -->
+  <section id="pricing">
+    <div class="inner grid-2">
+      <div>
+        <p class="eyebrow reveal">Transparent fees · no surprises</p>
+        <h2 class="reveal d1">Complete price transparency</h2>
+        <p class="lede reveal d2">We're completely transparent with all of our fees and pride ourselves on presenting every option. You'll always know the cost before treatment begins — and with HICAPS, your health fund rebate comes straight off the bill.</p>
+        <ul class="ticks reveal d2">
+          <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 6"/></svg></span>No hidden fees — every fee explained up front</li>
+          <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 6"/></svg></span>Every treatment option presented, never pushed</li>
+          <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 6"/></svg></span>Personalised written quote at your consultation</li>
+        </ul>
+      </div>
+      <div class="glass price-table reveal d2">
+        <div class="price-row"><div class="item"><b>New Patient Exam &amp; Clean</b><span>All-inclusive first visit</span></div><span class="fee">$270</span></div>
+        <div class="price-row"><div class="item"><b>Fillings</b><span>Composite resin restorations</span></div><span class="fee">from $190</span></div>
+        <div class="price-row"><div class="item"><b>Teeth Whitening</b><span>At-home to in-chair laser</span></div><span class="fee">from $390</span></div>
+        <div class="price-row"><div class="item"><b>Root Canal Treatment</b><span>Front tooth to molar</span></div><span class="fee">from $1,300</span></div>
+        <div class="price-row"><div class="item"><b>Crowns &amp; Veneers</b><span>Ceramic, per tooth</span></div><span class="fee">from $1,700</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= LOCATION ================= -->
+  <section id="location">
+    <div class="inner grid-2">
+      <div>
+        <p class="eyebrow reveal">Visit us</p>
+        <h2 class="reveal d1">In the heart of Sydney CBD</h2>
+        <p class="lede reveal d2">Level 14 of Park House on Macquarie Street — a short walk from Martin Place and St James stations, and easy to reach on a lunch break from anywhere in the city.</p>
+        <ul class="loc-lines reveal d2">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg><span>Park House, Level 14, 187–191 Macquarie Street, Sydney NSW 2000</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.4 2.1L8.1 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.6 2Z"/></svg><a href="tel:0292211685" class="js-call">02 9221 1685</a></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg><span>Open Monday to Friday — call for today's availability, or book online any time.</span></li>
+        </ul>
+        <div class="cta-row reveal d3">
+          <a class="btn btn-primary js-book-online" href="https://www.centaurportal.com/d4w/org-3069/extended_search?location=3518&randomNumber=9709a837c4d75f27b96c8835b48bb60639daff63b6394126c4e3313f902a4adb&shortVer=false&sourceID=null" target="_blank" rel="noopener">Book online</a>
+          <a class="btn btn-ghost js-call" href="tel:0292211685">Call the practice</a>
+        </div>
+      </div>
+      <div class="glass reveal d2" style="padding:8px;">
+        <iframe class="map-embed" title="Map to Horizon Dental, 187 Macquarie Street Sydney" src="https://www.google.com/maps?q=Horizon%20Dental%20187%20Macquarie%20Street%20Sydney%20NSW%202000&z=16&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FAQ ================= -->
+  <section id="faq">
+    <div class="inner">
+      <p class="eyebrow reveal">Good to know</p>
+      <h2 class="reveal d1">Questions we hear often</h2>
+
+      <div class="faq reveal d2">
+        <details class="glass">
+          <summary>What's included in the $270 new patient visit?<span class="pm" aria-hidden="true">+</span></summary>
+          <div class="a">Everything you need in a single, comprehensive first appointment: a comprehensive dental examination, a full professional scale and clean, X-rays where clinically indicated, and a personalised treatment plan discussion. There are no hidden extras — and if you have a health fund, you can claim on the spot with HICAPS and just pay the gap.</div>
+        </details>
+        <details class="glass">
+          <summary>Do you accept health funds and HICAPS?<span class="pm" aria-hidden="true">+</span></summary>
+          <div class="a">Yes — we accept all major Australian health funds via HICAPS, which means your rebate is claimed on the spot at the time of your visit and you only pay the difference. Depending on your fund and level of cover, your out-of-pocket cost may be 30–50% less than the listed fee. We also accept Medicare's Child Dental Benefits Schedule (CDBS) for eligible children.</div>
+        </details>
+        <details class="glass">
+          <summary>Do you offer payment plans?<span class="pm" aria-hidden="true">+</span></summary>
+          <div class="a">Yes. Zip Pay and Zip Money let you spread the cost of larger treatments into manageable weekly or fortnightly repayments, with interest-free options available — you can apply in minutes, subject to approval. You may also be able to access your superannuation for eligible dental treatment; our team can walk you through how it works.</div>
+        </details>
+        <details class="glass">
+          <summary>How do I get to the practice?<span class="pm" aria-hidden="true">+</span></summary>
+          <div class="a">We're on Level 14 of Park House at 187–191 Macquarie Street, in the heart of Sydney CBD — a short walk from Martin Place and St James stations and close to major bus routes. Many patients visit before work, on a lunch break or straight after the office.</div>
+        </details>
+        <details class="glass">
+          <summary>Can you help in a dental emergency?<span class="pm" aria-hidden="true">+</span></summary>
+          <div class="a">We reserve appointment time every business day specifically for dental emergencies. If you have severe pain, a broken tooth or a lost filling or crown, call us as early as possible on 02 9221 1685 and we'll do our best to see you the same day.</div>
+        </details>
+        <details class="glass">
+          <summary>I'm nervous about the dentist — can you help?<span class="pm" aria-hidden="true">+</span></summary>
+          <div class="a">Absolutely. Our team is experienced with anxious patients, and we take the time to explain everything before we begin. For those who need extra support, sedation options such as nitrous oxide are available — just let us know when you book.</div>
+        </details>
+        <details class="glass">
+          <summary>How often should I visit the dentist?<span class="pm" aria-hidden="true">+</span></summary>
+          <div class="a">We recommend a check-up and clean every six months. Regular visits let us catch small issues early, before they become complex or costly problems. Some patients with specific dental conditions may benefit from more frequent visits — we'll advise what's right for you.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FINAL CTA ================= -->
+  <section id="book" class="final-cta">
+    <div class="inner">
+      <p class="eyebrow reveal" style="justify-content:center;">New patients welcome</p>
+      <h2 class="reveal d1">Ready when you are</h2>
+      <p class="lede reveal d2" style="margin-inline:auto;">Book your $270 all-inclusive new patient exam &amp; clean online in minutes, or call our friendly team — we'll find a time that suits you.</p>
+      <div class="cta-row reveal d2">
+        <a class="btn btn-primary btn-lg js-book-online" href="https://www.centaurportal.com/d4w/org-3069/extended_search?location=3518&randomNumber=9709a837c4d75f27b96c8835b48bb60639daff63b6394126c4e3313f902a4adb&shortVer=false&sourceID=null" target="_blank" rel="noopener">Book online now</a>
+        <a class="btn btn-ghost btn-lg js-call" href="tel:0292211685">Call 02 9221 1685</a>
+      </div>
+      <div class="reviews reveal d3" style="justify-content:center;">
+        <span class="stars" aria-hidden="true">★★★★★</span>
+        <span class="reviews-text"><strong>5.0</strong> from <strong>106</strong> Google reviews</span>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="footer-inner">
+    <img src="logo.svg" alt="Horizon Dental" style="height:46px;width:auto;display:block;margin-bottom:1.4rem;background:#f8f5ee;padding:11px 15px;border-radius:14px;">
+    <div class="legal">
+      <p>Park House, Level 14, 187–191 Macquarie Street, Sydney NSW 2000 · <a href="tel:0292211685" style="color:inherit;">02 9221 1685</a></p>
+      <p>All fees shown are indicative "from" prices before any health fund rebate and are subject to change; a personalised quote is provided at your consultation. Depending on your health fund, your out-of-pocket expense may be reduced. Zip payment plans are subject to provider terms and approval. Any dental procedure carries risks and benefits — before proceeding, you should seek advice from an appropriately qualified health practitioner.</p>
+      <p class="reg">Care at Horizon Dental is provided by registered dental practitioners. Principal Dentist: Dr David Benjamin Kozor, B.D.Sc (CSU) — AHPRA Reg. No. DEN0001855548.</p>
+      <p>© Horizon Dental, All rights reserved · Website Design by <a href="https://generateyouraudience.com/" target="_blank" rel="noopener">Generate Your Audience</a></p>
+    </div>
+  </div>
+</footer>
+
+<!-- ================= MOBILE CTA DOCK (always visible while scrolling) ================= -->
+<div class="dock" role="navigation" aria-label="Quick actions">
+  <a class="btn btn-ghost js-call" href="tel:0292211685">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.4 2.1L8.1 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.6 2Z"/></svg>
+    Call now
+  </a>
+  <a class="btn btn-primary js-book-online" href="https://www.centaurportal.com/d4w/org-3069/extended_search?location=3518&randomNumber=9709a837c4d75f27b96c8835b48bb60639daff63b6394126c4e3313f902a4adb&shortVer=false&sourceID=null" target="_blank" rel="noopener">Book online</a>
+</div>
+
+<script>
+/* reveal on scroll */
+(function(){
+  var els = document.querySelectorAll(".reveal");
+  if (!("IntersectionObserver" in window)) { els.forEach(function(e){ e.classList.add("in"); }); return; }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){ if (en.isIntersecting){ en.target.classList.add("in"); io.unobserve(en.target); } });
+  }, { threshold:.12, rootMargin:"0px 0px -6% 0px" });
+  els.forEach(function(e){ io.observe(e); });
+})();
+</script>
+
+</body>
+</html>
