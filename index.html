@@ -486,6 +486,24 @@ body.lead-submitted #thanks{ display:flex; }
   .scroll-hint .dot{ animation:none; }
 }
 </style>
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '27515145741502546');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=27515145741502546&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
 </head>
 
 <body>
@@ -1060,6 +1078,8 @@ function wireForm(form){
       succ.hidden = false;
       succ.querySelector(".sx-msg").textContent =
         "Thanks " + data.firstName + " — we'll be in touch shortly to arrange your consultation.";
+      // Meta Pixel: report the conversion (base pixel is in <head>).
+      if (typeof fbq === "function") fbq('track', 'Lead');
       // …and move the visitor on to the dedicated thank-you section.
       leadSuccess(data);
     };
