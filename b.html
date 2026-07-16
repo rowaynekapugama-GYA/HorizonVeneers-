@@ -1123,7 +1123,7 @@ function wireForm(form){
       succ.querySelector(".sx-msg").textContent =
         "Thanks " + data.firstName + " — we'll be in touch shortly to arrange your consultation.";
       // Meta Pixel: report the conversion (base pixel is in <head>).
-      if (typeof fbq === "function") fbq('track', 'Lead');
+      if (typeof fbq === "function") fbq('track', 'Lead', { value: 1000, currency: 'AUD' });
       // …and move the visitor on to the dedicated thank-you section.
       leadSuccess(data);
     };
