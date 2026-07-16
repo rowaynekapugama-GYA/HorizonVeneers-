@@ -326,8 +326,9 @@ body.lead-submitted #thanks{ display:flex; }
 @media (prefers-reduced-motion:reduce){
   .smiles-track{ animation:none; }
   .smiles-marquee{ overflow-x:auto; mask-image:none; -webkit-mask-image:none; } }
-/* click-to-play explainer video (Dr Kozor) */
-.video-embed{ position:relative; width:100%; margin:2.2rem 0 0; aspect-ratio:16/9;
+/* click-to-play explainer video (Dr Kozor) — portrait 9:16 */
+.video-embed{ position:relative; margin:2.2rem auto 0; aspect-ratio:9/16;
+  width:min(400px, 100%, calc(64vh * 9 / 16));
   border-radius:var(--r); overflow:hidden; border:1px solid rgba(255,255,255,.1); box-shadow:0 30px 80px rgba(0,0,0,.5); background:#000; }
 .video-embed iframe{ position:absolute; inset:0; width:100%; height:100%; border:0; display:block; }
 /* hero Google-reviews badge */
@@ -558,7 +559,7 @@ body.lead-submitted #thanks{ display:flex; }
       <h2 class="title reveal d1">Here's Dr Kozor walking you through the veneer process</h2>
       <p class="lede reveal d2">In just a couple of minutes, Dr David Kozor explains exactly how your smile transformation works — from your first consultation right through to your final veneers.</p>
       <div class="video-embed reveal d2">
-        <iframe src="https://player.vimeo.com/video/1203842992?title=0&byline=0&portrait=0&dnt=1" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Dr Kozor explains the veneer process"></iframe>
+        <iframe src="https://player.vimeo.com/video/1210234955?title=0&byline=0&portrait=0&dnt=1" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Dr Kozor explains the veneer process"></iframe>
       </div>
       <div class="hero-cta reveal d3" style="margin-top:1.8rem">
         <button class="btn btn-primary btn-lg js-book" type="button">Book my consultation</button>
