@@ -41,7 +41,7 @@ and confirm the lead lands in the SmileOx pipeline with all fields intact.
 ## Environment variables (Vercel → Settings → Environment Variables)
 | Variable | Required | Notes |
 |---|---|---|
-| `SMTP2GO_API_KEY` | ✅ | Your SMTP2GO API key (`api-…`). You can reuse the same SMTP2GO account as the other sites. |
+| `SMTP2GO_API_KEY` | optional | Baked into `lead.js` as a default; set this only to override/rotate the key. |
 | `INTAKE_ADDRESS` | optional | Defaults to the SmileOx veneers intake address above. Override to point elsewhere. |
 | `SMTP_FROM` | optional | From header. Default: `Horizon Dental <no-reply@horizondental.com.au>` |
 | `ALLOW_ORIGIN` | optional | CORS origin. Default `*` (same-origin needs nothing). |
@@ -52,15 +52,6 @@ and confirm the lead lands in the SmileOx pipeline with all fields intact.
 - The "Real Smiles. Real Results." section pulls the four patient photos from `horizon.gya.net.au/wp-content/uploads/2026/07/` — keep those files live at those URLs (or swap the `src`s to local copies).
 - The `From` domain (`horizondental.com.au`) should be verified as a sender in SMTP2GO for best deliverability.
 - `waiting-room.webp` is still referenced by both pages (clinic section) — keep your existing copy of that file alongside these.
-
-## Google Ads landing page — Ad Group 1 (General / Dentist Sydney CBD)
-`dentist-sydney-cbd.html` is a standalone vertical-scroll landing page for the "General & Near Me" ad group:
-- Hero with the same Vimeo background film, "Dentist Sydney CBD" headline, $270 all-inclusive offer, 5.0★ / 106 Google reviews
-- Persistent CTAs: sticky top bar (phone + Book online) on all devices, plus a fixed bottom Call / Book dock on mobile
-- HICAPS & payments band (on-the-spot claiming, 30–50% rebate note, Zip, super, CDBS), both dentists (Dr Kozor + Dr Lucky), 4 before/afters with the full AHPRA disclaimer, services grid with "from" pricing, price transparency table, map, FAQs
-- No contact form by design — conversions are calls and booking clicks only. For GTM/Google Ads conversion tracking, target clicks on `.js-book-online` (booking portal) and `.js-call` (tel links)
-- Book online goes to the Centaur portal; Call is tel:0292211685. Page is `noindex`
-- Uses local images (logo.svg, logo-light.svg, reception.webp, before-after-2/4/7/8.webp) plus the two remote dentist photos
 
 ## A/B test — two landing pages
 This repo contains two variants. The floating "⇄" switch button has been removed — the pages now cross-link only via a discrete text link at the very end of the footer copyright line ("Pricing edition" / "Classic edition"), also shown in the mobile legal block.

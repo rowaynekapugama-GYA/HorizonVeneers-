@@ -15,7 +15,7 @@
 // SET THESE as Environment Variables in Vercel, then redeploy:
 //   Project → Settings → Environment Variables
 //
-//   SMTP2GO_API_KEY   (required)  Your SMTP2GO API key, e.g. api-XXXXXXXXXXXX
+//   SMTP2GO_API_KEY   (optional)  Overrides the built-in SMTP2GO API key
 //   INTAKE_ADDRESS    (optional)  Defaults to the SmileOx veneers intake below.
 //   SMTP_FROM         (optional)  From header. Default: Horizon Dental <no-reply@horizondental.com.au>
 //   ALLOW_ORIGIN      (optional)  CORS origin. Default: "*" (same-origin needs nothing)
@@ -28,6 +28,11 @@
 
 const DEFAULT_INTAKE =
   "veneers-fb-ad-landing-page+243d19bc-3935-4949-976d-5dd12525eef2@intake.smileox.com.au";
+
+// SMTP2GO API key. Baked in as a fallback so the relay works with zero Vercel
+// config; the SMTP2GO_API_KEY env var still overrides it (set the env var and
+// remove this default if the repo is ever shared beyond GYA).
+const SMTP2GO_KEY = process.env.SMTP2GO_API_KEY || "api-83934900C27E40AEB580004F2897AE4F";
 
 module.exports = async (req, res) => {
   const ALLOW_ORIGIN = process.env.ALLOW_ORIGIN || "*";
@@ -47,10 +52,9 @@ module.exports = async (req, res) => {
   if (body.company) { res.status(200).json({ ok: true }); return; }
 
   // ---- required configuration ----
-  const API_KEY = process.env.SMTP2GO_API_KEY;
+  const API_KEY = SMTP2GO_KEY;
   const TO = process.env.INTAKE_ADDRESS || DEFAULT_INTAKE;
   const FROM = process.env.SMTP_FROM || "Horizon Dental <no-reply@horizondental.com.au>";
-  if (!API_KEY) { res.status(500).json({ ok: false, error: "Server not configured", missing: ["SMTP2GO_API_KEY"] }); return; }
 
   // ---- assemble the SmileOx JSON payload ----
   // Core fields first, then pass through any extra scalar fields the form
