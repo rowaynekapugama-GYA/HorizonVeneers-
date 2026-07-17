@@ -1,20 +1,38 @@
 // api/lead.js — Horizon Dental lead relay (Vercel serverless function)
 // ---------------------------------------------------------------------------
-// Receives the booking-form POST from index.html and emails it to your SmileOx
-// CRM intake address via the SMTP2GO HTTP API. (A browser cannot send SMTP
-// email directly, so this small same-origin relay does it server-side.)
+// Receives the booking-form POST from the veneers landing pages and forwards it
+// to the SmileOx CRM intake as a JSON email (plain-text body), per the SmileOx
+// "Integrate Website Form Intake" spec. Delivery is via the SMTP2GO HTTP API,
+// which transmits to the recipient mail server over TLS.
+//
+// SmileOx intake behaviour:
+//   • The email BODY must be a JSON object as plain text (Content-Type: text/plain).
+//   • Core fields: firstName, lastName, email, phoneNumber. Any additional
+//     fields (smileGoals, suitability, source, …) are stored as lead details.
+//   • Repeat submissions with the same email + phone UPDATE the existing lead
+//     instead of creating a duplicate (useful for multi-step forms).
 //
 // SET THESE as Environment Variables in Vercel, then redeploy:
 //   Project → Settings → Environment Variables
 //
-//   SMTP2GO_API_KEY   (required)  Your SMTP2GO API key, e.g. api-XXXXXXXXXXXX
-//   INTAKE_ADDRESS    (required)  Where leads are emailed — your SmileOx intake address
+//   SMTP2GO_API_KEY   (optional)  Overrides the built-in SMTP2GO API key
+//   INTAKE_ADDRESS    (optional)  Defaults to the SmileOx veneers intake below.
 //   SMTP_FROM         (optional)  From header. Default: Horizon Dental <no-reply@horizondental.com.au>
 //   ALLOW_ORIGIN      (optional)  CORS origin. Default: "*" (same-origin needs nothing)
 //
 // Quick test once deployed:  GET https://YOURSITE/api/lead  →  {"ok":false,"error":"Method not allowed"}
 // (That JSON means the function is live. A 404 means it isn't deployed in an /api folder.)
+// After a real test submit, verify the lead appears in the SmileOx pipeline
+// with every field intact.
 // ---------------------------------------------------------------------------
+
+const DEFAULT_INTAKE =
+  "veneers-fb-ad-landing-page+243d19bc-3935-4949-976d-5dd12525eef2@intake.smileox.com.au";
+
+// SMTP2GO API key. Baked in as a fallback so the relay works with zero Vercel
+// config; the SMTP2GO_API_KEY env var still overrides it (set the env var and
+// remove this default if the repo is ever shared beyond GYA).
+const SMTP2GO_KEY = process.env.SMTP2GO_API_KEY || "api-83934900C27E40AEB580004F2897AE4F";
 
 module.exports = async (req, res) => {
   const ALLOW_ORIGIN = process.env.ALLOW_ORIGIN || "*";
@@ -34,41 +52,30 @@ module.exports = async (req, res) => {
   if (body.company) { res.status(200).json({ ok: true }); return; }
 
   // ---- required configuration ----
-  const API_KEY = process.env.SMTP2GO_API_KEY;
-  const TO = process.env.INTAKE_ADDRESS;
+  const API_KEY = SMTP2GO_KEY;
+  const TO = process.env.INTAKE_ADDRESS || DEFAULT_INTAKE;
   const FROM = process.env.SMTP_FROM || "Horizon Dental <no-reply@horizondental.com.au>";
-  const missing = [];
-  if (!API_KEY) missing.push("SMTP2GO_API_KEY");
-  if (!TO) missing.push("INTAKE_ADDRESS");
-  if (missing.length) { res.status(500).json({ ok: false, error: "Server not configured", missing: missing }); return; }
 
-  // ---- assemble the lead ----
+  // ---- assemble the SmileOx JSON payload ----
+  // Core fields first, then pass through any extra scalar fields the form
+  // sent (smileGoals, suitability, source, …) — SmileOx stores them as lead
+  // details. The honeypot field is never forwarded.
   const v = (k) => (body[k] == null ? "" : String(body[k]).trim());
-  const firstName = v("firstName"), lastName = v("lastName");
-  const fullName = (firstName + " " + lastName).trim() || "(no name given)";
-  const email = v("email");
+  const payload = {
+    firstName: v("firstName"),
+    lastName: v("lastName"),
+    email: v("email"),
+    phoneNumber: v("phoneNumber")
+  };
+  for (const key of Object.keys(body)) {
+    if (key === "company" || payload[key] !== undefined) continue;
+    const val = body[key];
+    if (val == null) continue;
+    payload[key] = typeof val === "string" ? val.trim() : val;
+  }
+  payload.submittedAt = new Date().toISOString();
 
-  const textBody = [
-    "New veneer enquiry from the Horizon Dental landing page",
-    "------------------------------------------------------",
-    "Name:         " + fullName,
-    "Email:        " + email,
-    "Phone:        " + v("phoneNumber"),
-    "Smile goals:  " + (v("smileGoals") || "—"),
-    "Suitability:  " + (v("suitability") || "—"),
-    "",
-    "Submitted:    " + new Date().toISOString()
-  ].join("\n");
-
-  const htmlBody =
-    "<h2 style=\"font-family:Arial,sans-serif\">New veneer enquiry</h2>" +
-    "<table style=\"font-family:Arial,sans-serif;font-size:14px;border-collapse:collapse\">" +
-    row("Name", fullName) + row("Email", email) + row("Phone", v("phoneNumber")) +
-    row("Smile goals", v("smileGoals") || "—") + row("Suitability", v("suitability") || "—") +
-    "</table>" +
-    "<p style=\"color:#888;font-family:Arial,sans-serif;font-size:12px\">Submitted " + new Date().toISOString() + "</p>";
-
-  // ---- send via SMTP2GO HTTP API ----
+  // ---- send via SMTP2GO HTTP API (plain-text JSON body only) ----
   try {
     const r = await fetch("https://api.smtp2go.com/v3/email/send", {
       method: "POST",
@@ -77,10 +84,8 @@ module.exports = async (req, res) => {
         api_key: API_KEY,
         to: [TO],
         sender: FROM,
-        subject: "New veneer enquiry — " + fullName,
-        text_body: textBody,
-        html_body: htmlBody,
-        custom_headers: email ? [{ header: "Reply-To", value: email }] : []
+        subject: "Website form submission",
+        text_body: JSON.stringify(payload)
       })
     });
 
@@ -101,11 +106,3 @@ module.exports = async (req, res) => {
     res.status(502).json({ ok: false, error: "Email send failed", detail: String(e && e.message ? e.message : e) });
   }
 };
-
-function row(label, value) {
-  return "<tr><td style=\"padding:4px 14px 4px 0;color:#555;font-weight:bold;vertical-align:top\">" +
-    esc(label) + "</td><td style=\"padding:4px 0\">" + esc(value) + "</td></tr>";
-}
-function esc(s) {
-  return String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
-}
